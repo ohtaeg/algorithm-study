@@ -16,17 +16,17 @@ class TopTest {
         // given
         int[] heights = {6, 9, 5, 7, 4};
         int heightsSize = heights.length;
-        int[] actual = {0, 0, 2, 2, 4};
+        int[] expect = {0, 0, 2, 2, 4};
 
 
         // when then
         assertAll(
-               () -> assertThat(top.recept(heights, heightsSize - 5)).isEqualTo(actual[0])
-               ,() -> assertThat(top.recept(heights,heightsSize - 4)).isEqualTo(actual[1])
-               ,() -> assertThat(top.recept(heights,heightsSize - 3)).isEqualTo(actual[2])
-               ,() -> assertThat(top.recept(heights,heightsSize - 2)).isEqualTo(actual[3])
-               ,() -> assertThat(top.recept(heights,heightsSize - 1)).isEqualTo(actual[4])
-               ,() ->  assertThat(top.solution(heights)).containsExactly(actual)
+               () -> assertThat(top.recept(heights, heightsSize - 5)).isEqualTo(expect[0])
+               ,() -> assertThat(top.recept(heights,heightsSize - 4)).isEqualTo(expect[1])
+               ,() -> assertThat(top.recept(heights,heightsSize - 3)).isEqualTo(expect[2])
+               ,() -> assertThat(top.recept(heights,heightsSize - 2)).isEqualTo(expect[3])
+               ,() -> assertThat(top.recept(heights,heightsSize - 1)).isEqualTo(expect[4])
+               ,() ->  assertThat(top.solution(heights)).containsExactly(expect)
         );
     }
 
@@ -36,19 +36,19 @@ class TopTest {
         // given
         int[] heights = {3, 9, 9, 3, 5, 7, 2};
         int heightsSize = heights.length;
-        int[] actual = {0, 0, 0, 3, 3, 3, 6};
+        int[] expect = {0, 0, 0, 3, 3, 3, 6};
 
 
         // when then
         assertAll(
-                () -> assertThat(top.recept(heights,  heightsSize - 7)).isEqualTo(actual[0])
-                ,() -> assertThat(top.recept(heights, heightsSize - 6)).isEqualTo(actual[1])
-                ,() -> assertThat(top.recept(heights, heightsSize - 5)).isEqualTo(actual[2])
-                ,() -> assertThat(top.recept(heights, heightsSize - 4)).isEqualTo(actual[3])
-                ,() -> assertThat(top.recept(heights, heightsSize - 3)).isEqualTo(actual[4])
-                ,() -> assertThat(top.recept(heights, heightsSize - 2)).isEqualTo(actual[5])
-                ,() -> assertThat(top.recept(heights, heightsSize - 1)).isEqualTo(actual[6])
-                ,() ->  assertThat(top.solution(heights)).containsExactly(actual)
+                () -> assertThat(top.recept(heights,  heightsSize - 7)).isEqualTo(expect[0])
+                ,() -> assertThat(top.recept(heights, heightsSize - 6)).isEqualTo(expect[1])
+                ,() -> assertThat(top.recept(heights, heightsSize - 5)).isEqualTo(expect[2])
+                ,() -> assertThat(top.recept(heights, heightsSize - 4)).isEqualTo(expect[3])
+                ,() -> assertThat(top.recept(heights, heightsSize - 3)).isEqualTo(expect[4])
+                ,() -> assertThat(top.recept(heights, heightsSize - 2)).isEqualTo(expect[5])
+                ,() -> assertThat(top.recept(heights, heightsSize - 1)).isEqualTo(expect[6])
+                ,() ->  assertThat(top.solution(heights)).containsExactly(expect)
         );
     }
 
@@ -58,18 +58,18 @@ class TopTest {
         // given
         int[] heights = {1, 5, 3, 6, 7, 6, 5};
         int heightsSize = heights.length;
-        int[] actual = {0, 0, 2, 0, 0, 5, 6};
+        int[] expect = {0, 0, 2, 0, 0, 5, 6};
 
         // when then
         assertAll(
-                () -> assertThat(top.recept(heights,  heightsSize - 7)).isEqualTo(actual[0])
-                ,() -> assertThat(top.recept(heights, heightsSize - 6)).isEqualTo(actual[1])
-                ,() -> assertThat(top.recept(heights, heightsSize - 5)).isEqualTo(actual[2])
-                ,() -> assertThat(top.recept(heights, heightsSize - 4)).isEqualTo(actual[3])
-                ,() -> assertThat(top.recept(heights, heightsSize - 3)).isEqualTo(actual[4])
-                ,() -> assertThat(top.recept(heights, heightsSize - 2)).isEqualTo(actual[5])
-                ,() -> assertThat(top.recept(heights, heightsSize - 1)).isEqualTo(actual[6])
-                ,() ->  assertThat(top.solution(heights)).containsExactly(actual)
+                () -> assertThat(top.recept(heights,  heightsSize - 7)).isEqualTo(expect[0])
+                ,() -> assertThat(top.recept(heights, heightsSize - 6)).isEqualTo(expect[1])
+                ,() -> assertThat(top.recept(heights, heightsSize - 5)).isEqualTo(expect[2])
+                ,() -> assertThat(top.recept(heights, heightsSize - 4)).isEqualTo(expect[3])
+                ,() -> assertThat(top.recept(heights, heightsSize - 3)).isEqualTo(expect[4])
+                ,() -> assertThat(top.recept(heights, heightsSize - 2)).isEqualTo(expect[5])
+                ,() -> assertThat(top.recept(heights, heightsSize - 1)).isEqualTo(expect[6])
+                ,() ->  assertThat(top.solution(heights)).containsExactly(expect)
         );
     }
 

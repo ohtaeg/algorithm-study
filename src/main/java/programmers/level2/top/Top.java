@@ -1,6 +1,6 @@
 package programmers.level2.top;
 
-public class Top extends Solution {
+class Top extends Solution {
     @Override
     public int[] solution(final int[] heights) {
         int length = heights.length;
