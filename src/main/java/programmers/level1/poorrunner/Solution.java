@@ -1,14 +1,17 @@
 package programmers.level1.poorrunner;
 
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 public class Solution {
     public String solution(String[] participant, String[] completion) {
-        Map<String, Long> map = Arrays.stream(participant)
-                                      .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        // 더 느림, 아마도 grouping에서 오래 걸리는듯 하다.
+//        Map<String, Long> map = Arrays.stream(participant)
+//                                      .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        Map<String, Integer> map = new HashMap<>();
+        for (int i=0; i<participant.length; i++) {
+            map.put(participant[i], map.getOrDefault(participant[i], 0) + 1);
+        }
 
         for (String name : completion) {
             map.put(name, map.get(name) - 1);
