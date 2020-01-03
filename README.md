@@ -15,6 +15,7 @@
         - [x] 전화번호 목록
         - [x] 위장
 - 레벨 3
+    - [x] 베스트 앨범
 - 레벨 4
 
 > [문제 출처: 프로그래머스](https://programmers.co.kr/learn/challenges)
