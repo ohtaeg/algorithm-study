@@ -22,5 +22,5 @@
 ---
 ### 백준
 - Stack
-    - [x] 스택 수열 (1874)
-    - [x] 에디터 (1406)
+    - [x] 스택 수열 [(1874)](https://www.acmicpc.net/problem/1874)
+    - [x] 에디터 [(1406)](https://www.acmicpc.net/problem/1406)
