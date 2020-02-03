@@ -21,3 +21,6 @@
 > [문제 출처: 프로그래머스](https://programmers.co.kr/learn/challenges)
 ---
 ### 백준
+- Stack
+    - [x] 스택 수열 (1874)
+    - [x] 에디터 (1406)
