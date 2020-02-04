@@ -28,4 +28,9 @@
 
 - Queue
     - [x] 조세퍼스 순열 [(1158)](https://www.acmicpc.net/problem/1158)
+
+- Deck
+    - [x] 덱 구현 [(10866)](https://www.acmicpc.net/problem/10866)
+
+- DP
     
