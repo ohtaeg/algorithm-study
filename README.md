@@ -25,3 +25,7 @@
     - [x] 단어 뒤집기 [(9093)](https://www.acmicpc.net/problem/9093)
     - [x] 스택 수열 [(1874)](https://www.acmicpc.net/problem/1874)
     - [x] 에디터 [(1406)](https://www.acmicpc.net/problem/1406)
+
+- Queue
+    - [x] 조세퍼스 순열 [(1158)](https://www.acmicpc.net/problem/1158)
+    
