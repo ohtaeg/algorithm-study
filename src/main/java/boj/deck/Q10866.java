@@ -1,4 +1,4 @@
-package boj.stack;
+package boj.deck;
 
 import java.io.BufferedReader;
 import java.io.IOException;

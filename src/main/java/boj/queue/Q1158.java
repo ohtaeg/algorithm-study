@@ -1,4 +1,4 @@
-package boj.stack;
+package boj.queue;
 
 import java.io.*;
 import java.util.LinkedList;
