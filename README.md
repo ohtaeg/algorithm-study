@@ -27,6 +27,8 @@
     - [x] 스택 수열 [(1874)](https://www.acmicpc.net/problem/1874)
     - [x] 에디터 [(1406)](https://www.acmicpc.net/problem/1406)
     - [x] 쇠막대기 [(10799)](https://www.acmicpc.net/problem/10799)
+    - [x] 오큰수 [(17298)](https://www.acmicpc.net/problem/17298)
+    - [x] 오등큰수 [(17299)](https://www.acmicpc.net/problem/17299)
 
 - Queue
     - [x] 조세퍼스 순열 [(1158)](https://www.acmicpc.net/problem/1158)
