@@ -48,3 +48,6 @@
     - [x] ROT13 [(11655)](https://www.acmicpc.net/problem/11655)
     - [x] 문자열 정렬 [(11656)](https://www.acmicpc.net/problem/11656)
     
+- 기초 수학
+    -[x] 최대공약수, 최대공배수 [(2609)](https://www.acmicpc.net/problem/2609)
+    
