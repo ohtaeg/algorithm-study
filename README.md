@@ -29,6 +29,7 @@
     - [x] 쇠막대기 [(10799)](https://www.acmicpc.net/problem/10799)
     - [x] 오큰수 [(17298)](https://www.acmicpc.net/problem/17298)
     - [x] 오등큰수 [(17299)](https://www.acmicpc.net/problem/17299)
+    - [x] 후위 표기식 [(1918)](https://www.acmicpc.net/problem/1918)
 
 - Queue
     - [x] 조세퍼스 순열 [(1158)](https://www.acmicpc.net/problem/1158)
