@@ -22,15 +22,15 @@
 ---
 ### 백준
 - Stack
-    - [x] 단어 뒤집기 [(9093)](https://www.acmicpc.net/problem/9093)
-    - [x] 단어 뒤집기2 [(17413)](https://www.acmicpc.net/problem/17413)
-    - [x] 스택 수열 [(1874)](https://www.acmicpc.net/problem/1874)
     - [x] 에디터 [(1406)](https://www.acmicpc.net/problem/1406)
+    - [x] 스택 수열 [(1874)](https://www.acmicpc.net/problem/1874)
+    - [x] 후위 표기식 [(1918)](https://www.acmicpc.net/problem/1918)
+    - [x] 후위 표기식2 [(1935)](https://www.acmicpc.net/problem/1935)
+    - [x] 단어 뒤집기 [(9093)](https://www.acmicpc.net/problem/9093)
     - [x] 쇠막대기 [(10799)](https://www.acmicpc.net/problem/10799)
     - [x] 오큰수 [(17298)](https://www.acmicpc.net/problem/17298)
     - [x] 오등큰수 [(17299)](https://www.acmicpc.net/problem/17299)
-    - [x] 후위 표기식 [(1918)](https://www.acmicpc.net/problem/1918)
-    - [x] 후위 표기식2 [(1935)](https://www.acmicpc.net/problem/1935)
+    - [x] 단어 뒤집기2 [(17413)](https://www.acmicpc.net/problem/17413)
 
 - Queue
     - [x] 조세퍼스 순열 [(1158)](https://www.acmicpc.net/problem/1158)
@@ -42,4 +42,9 @@
 
 - 문자열 처리
     - [x] 알파벳 개수 [(10808)](https://www.acmicpc.net/problem/10808)
+    - [x] 알파벳 찾기 [(10809)](https://www.acmicpc.net/problem/10809)
+    - [x] 문자열 분석 [(10820)](https://www.acmicpc.net/problem/10820)
+    - [x] 네 수 [(10824)](https://www.acmicpc.net/problem/10824)
+    - [x] ROT13 [(11655)](https://www.acmicpc.net/problem/11655)
+    - [x] 문자열 정렬 [(11656)](https://www.acmicpc.net/problem/11656)
     
