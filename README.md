@@ -49,5 +49,7 @@
     - [x] 문자열 정렬 [(11656)](https://www.acmicpc.net/problem/11656)
     
 - 기초 수학
-    -[x] 최대공약수, 최대공배수 [(2609)](https://www.acmicpc.net/problem/2609)
+    - [x] 최소공배수 [(1934)](https://www.acmicpc.net/problem/1934)
+    - [x] 소수 찾기 [(1978)](https://www.acmicpc.net/problem/1978)
+    - [x] 최대공약수, 최대공배수 [(2609)](https://www.acmicpc.net/problem/2609)
     
