@@ -38,6 +38,8 @@
 - Deck
     - [x] 덱 구현 [(10866)](https://www.acmicpc.net/problem/10866)
 
+- 정렬
+
 - DP
 
 - 문자열 처리
@@ -49,6 +51,7 @@
     - [x] 문자열 정렬 [(11656)](https://www.acmicpc.net/problem/11656)
     
 - 기초 수학
+    - [x] 소수 구하기 [(1929)](https://www.acmicpc.net/problem/1929)
     - [x] 최소공배수 [(1934)](https://www.acmicpc.net/problem/1934)
     - [x] 소수 찾기 [(1978)](https://www.acmicpc.net/problem/1978)
     - [x] 최대공약수, 최대공배수 [(2609)](https://www.acmicpc.net/problem/2609)
