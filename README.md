@@ -57,4 +57,6 @@
     - [x] 최대공약수, 최대공배수 [(2609)](https://www.acmicpc.net/problem/2609)
     - [x] 골드바흐의 추측 [(6588)](https://www.acmicpc.net/problem/6588)
     - [x] 골드바흐의 추측 [(9020)](https://www.acmicpc.net/problem/9020)
+    - [x] 팩토리얼 [(10872)](https://www.acmicpc.net/problem/10872)
+    - [x] 팩토리얼 0의 갯수 [(1676)](https://www.acmicpc.net/problem/1676)
     
