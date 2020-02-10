@@ -55,4 +55,5 @@
     - [x] 최소공배수 [(1934)](https://www.acmicpc.net/problem/1934)
     - [x] 소수 찾기 [(1978)](https://www.acmicpc.net/problem/1978)
     - [x] 최대공약수, 최대공배수 [(2609)](https://www.acmicpc.net/problem/2609)
+    - [x] 골드바흐의 추측 [(6588)](https://www.acmicpc.net/problem/6588)
     
