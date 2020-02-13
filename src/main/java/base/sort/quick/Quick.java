@@ -16,13 +16,15 @@ public class Quick {
     }
 
     private static void sort(final int[] arr, final int begin, final int end) {
-        if (begin < end) {
-            int pivot = partition(arr, begin, end);
-            sort(arr, begin, pivot - 1);
-            sort(arr, pivot, end);
+        if (begin >= end) {
+            return;
         }
+        int pivot = partition(arr, begin, end);
+        sort(arr, begin, pivot - 1);
+        sort(arr, pivot, end);
     }
 
+    // non - recursive
     private static void sortUsingStack(final int[] arr, final int begin, final int end) {
         Stack<Integer> stack = new Stack<>();
         int low = begin;
