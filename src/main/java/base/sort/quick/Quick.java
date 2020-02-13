@@ -1,13 +1,18 @@
 package base.sort.quick;
 
-import java.util.Random;
+import java.util.Stack;
 
 public class Quick {
-    private static final Random rand = new Random();
     public static void main(String[] args) {
         int[] arr = new int[]{29, 14, 10, 37, 13, 10, 1};
         Quick.sort(arr, 0, arr.length - 1);
         print(arr);
+
+        System.out.println("=== non recursive using stack ===");
+
+        int[] arr2 = new int[]{29, 14, 10, 37, 13, 10, 1};
+        Quick.sortUsingStack(arr2, 0, arr2.length - 1);
+        print(arr2);
     }
 
     private static void sort(final int[] arr, final int begin, final int end) {
@@ -15,6 +20,34 @@ public class Quick {
             int pivot = partition(arr, begin, end);
             sort(arr, begin, pivot - 1);
             sort(arr, pivot, end);
+        }
+    }
+
+    private static void sortUsingStack(final int[] arr, final int begin, final int end) {
+        Stack<Integer> stack = new Stack<>();
+        int low = begin;
+        int high = end;
+        int pivot;
+
+        stack.push(low);
+        stack.push(high);
+
+        while (!stack.isEmpty()) {
+            high = stack.pop();
+            low = stack.pop();
+
+            if (low < high) {
+                pivot = partition(arr, low, high);
+                // 전반부
+                // if (pivot > low) {
+                stack.push(low);
+                stack.push(pivot - 1);
+
+                // 후반부
+                // if (pivot <= high) {
+                stack.push(pivot);
+                stack.push(high);
+            }
         }
     }
 
