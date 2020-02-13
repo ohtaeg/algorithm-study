@@ -4,7 +4,7 @@
     - `버블 정렬`, `삽입 정렬`, `합병 정렬`
     
 - 불안정 정렬 : 동일한 값에 대해서, 기존의 순서가 뒤바뀔 수 있는 정렬 방식
-    - `선택 정렬`
+    - `선택 정렬`, `퀵 정렬`
     - [Reason](https://stackoverflow.com/questions/4601057/why-is-selection-sort-not-stable)
 
 ### Example
