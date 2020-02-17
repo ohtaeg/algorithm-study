@@ -2,7 +2,7 @@
 - 힙을 설명한다.
 - 힙 정렬을 설명한다.
 - 힙 정렬을 구현한다.
-- 힙 정렬의 평균시간복잡도와 최악시간복잡도를 설명한다. 
+- 힙 정렬의 시간복잡도와 공간 복잡도를 설명한다. 
 
 ### 힙이란?
 1. 완전 이진 트리의 일종(Complete binary tree) 으로 `우선순위 큐`를 위하여 만들어진 자료구조이다.
@@ -13,12 +13,12 @@
 - `Heap` 자료구조를 이용하여, `Heapify`연산을 통해 정렬하는 방법.
 
 #### 2. Complete binary tree
-![complete binary tree](./img/complete binary tree.png)
+![complete binary tree](img/completebinarytree.png)
 - 만약 오른쪽부터 노드가 연속적으로 비어지지 않았다면 `Complete binary tree`가 아니다.
 
 <br>
 
-![is complete binary tree](./img/is complete binary tree.png)
+![is complete binary tree](img/iscompletebinarytree.png)
 - A는 `Heap`이고 B,C는 `Heap`이 아니다.
 - A는 `Complete binary tree`를 만족하면서 `Max Heap`을 만족한다.
 - B는 `Complete binary tree`를 만족하지만 `Max Heap`, `Min Heap` 두 `Heap Property`중 하나라도 만족하지 않는다.
