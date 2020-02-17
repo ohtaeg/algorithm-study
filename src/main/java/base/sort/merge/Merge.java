@@ -27,16 +27,16 @@ public class Merge {
 
     // merge for recursive
     private static void merge(final int[] arr, final int begin, final int half, final int end) {
-        int left = begin;
-        int mid = half + 1;
-        int index = begin;
         int[] temp = new int[arr.length];
+        int index = begin;
+        int left = begin;
+        int right = half + 1;
 
-        while (left <= half && mid <= end) {
-            if (arr[left] < arr[mid]) {
+        while (left <= half && right <= end) {
+            if (arr[left] < arr[right]) {
                 temp[index++] = arr[left++];
             } else {
-                temp[index++] = arr[mid++];
+                temp[index++] = arr[right++];
             }
         }
 
@@ -44,8 +44,8 @@ public class Merge {
             temp[index++] = arr[left++];
         }
 
-        while (mid <= end) {
-            temp[index++] = arr[mid++];
+        while (right <= end) {
+            temp[index++] = arr[right++];
         }
 
         for (int i=begin; i<index; i++) {
