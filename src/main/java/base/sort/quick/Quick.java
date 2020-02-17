@@ -16,12 +16,11 @@ public class Quick {
     }
 
     private static void sort(final int[] arr, final int begin, final int end) {
-        if (begin >= end) {
-            return;
+        if (begin < end) {
+            int pivot = partition(arr, begin, end);
+            sort(arr, begin, pivot - 1);
+            sort(arr, pivot, end);
         }
-        int pivot = partition(arr, begin, end);
-        sort(arr, begin, pivot - 1);
-        sort(arr, pivot, end);
     }
 
     // non - recursive
@@ -78,7 +77,7 @@ public class Quick {
                 right--;
             }
         }
-        return left;
+        return left; // 후반부 첫번째 index return
     }
 
     private static void swap(final int[] arr, final int left, final int right) {
