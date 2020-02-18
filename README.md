@@ -1,4 +1,13 @@
 # 알고리즘 공부
+### 기본 정렬
+- Bubble
+- Selection
+- Insertion
+- Merge (recursion, non recursion)
+- Quick (recursion, non recursion)
+- Heap  (recursion, non recursion)
+    - Max Heap
+    - Min Heap
 
 ### 프로그래머스 
 - 레벨 1
