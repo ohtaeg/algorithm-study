@@ -2,13 +2,13 @@ package base.sort.heap;
 
 public class Heap {
     public static void main(String[] args) {
-        int[] arr = { 23, 10, 60, 55, 4, 22, 2 };
+        int[] arr = { 1, 23, 10, 1, 60, 55, 4, 22, 2 };
         Heap.sort(arr);
         print(arr);
 
         System.out.println("== non recursive ===");
 
-        int[] arr2 = { 23, 10, 60, 55, 4, 22, 2 };
+        int[] arr2 = { 1, 23, 10, 1, 60, 55, 4, 22, 2 };
         Heap.nonRecursiveSort(arr2);
         print(arr2);
     }
@@ -16,11 +16,11 @@ public class Heap {
     private static void sort(final int[] arr) {
         int heapSize = arr.length;
         // 마지막 노드의 부모 노드 (n/2)에서부터 시작, root(0)까지 반복해서 max heap 을 만든다.
-        for (int i = heapSize / 2; i >= 0; i--) {
+        for (int i = heapSize / 2 - 1; i >= 0; i--) {
             heapify(arr, heapSize, i);
         }
 
-        for (int i = arr.length - 1; i > 0; i--) {
+        for (int i = heapSize - 1; i > 0; i--) {
             // 마지막 node부터 root값을 바꿔나간다.
             swap(arr, 0, i);
             heapify(arr, i, 0);
