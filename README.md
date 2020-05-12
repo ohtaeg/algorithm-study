@@ -35,6 +35,7 @@
     - [x] 스택 수열 [(1874)](https://www.acmicpc.net/problem/1874)
     - [x] 후위 표기식 [(1918)](https://www.acmicpc.net/problem/1918)
     - [x] 후위 표기식2 [(1935)](https://www.acmicpc.net/problem/1935)
+    - [x] 괄호 [(9012)](https://www.acmicpc.net/problem/9012)
     - [x] 단어 뒤집기 [(9093)](https://www.acmicpc.net/problem/9093)
     - [x] 쇠막대기 [(10799)](https://www.acmicpc.net/problem/10799)
     - [x] 오큰수 [(17298)](https://www.acmicpc.net/problem/17298)

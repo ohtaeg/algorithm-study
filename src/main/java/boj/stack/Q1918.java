@@ -8,46 +8,59 @@ import java.util.Stack;
 /**
  * postfix notatation
  * A+B*C+D       => ABC*+D+
+ * A+B*C         => ABC*+
+ * (A+B)*C       => AB+C*
+ * (A*(B+C))-D   => ABC+*D-
+ * (A*(B+C)+D)-E => ABC+*D+E-
  */
 public class Q1918 {
+    private static final BufferedReader BUFFERED_READER = new BufferedReader(new InputStreamReader(System.in));
     private static final String OPEN_BRACKET = "(";
     private static final String CLOSE_BRACKET = ")";
     private static final String PLUS_OPERATOR = "+";
     private static final String MINUS_OPERATOR = "-";
     private static final String MULTIPLE_OPERATOR = "*";
     private static final String DIVIDE_OPERATOR = "/";
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String source = br.readLine();
-        br.close();
 
-        StringBuilder stringBuilder = new StringBuilder();
-        Stack<String> stack = new Stack<>();
-        String letter;
+    public static void main(String[] args) throws IOException {
+        String source = BUFFERED_READER.readLine();
+        BUFFERED_READER.close();
+
+        StringBuilder result = new StringBuilder();
+        Stack<String> operandStack = new Stack<>();
 
         for (char ch : source.toCharArray()) {
-            letter = String.valueOf(ch);
+            String letter = String.valueOf(ch);
+            // 1. 여는 괄호 나올시, push
             if (isOpenBracket(letter)) {
-                stack.push(letter);
-            } else if (isCloseBracket(letter)) {
-                while (!stack.isEmpty() && !isOpenBracket(stack.peek())) {
-                    stringBuilder.append(stack.pop());
+                operandStack.push(letter);
+                continue;
+            }
+
+            // 2. 닫는 괄호 나올시, 스택에 여는괄호 나올때까지 pop()
+            if (isCloseBracket(letter)) {
+                while (!operandStack.isEmpty() && !isOpenBracket(operandStack.peek())) {
+                    result.append(operandStack.pop());
                 }
-                stack.pop(); // "(" pop
-            } else if (isOperator(letter)) {
-                while (!stack.isEmpty() && isPriorityGreaterThan(stack.peek(), letter)) {
-                    stringBuilder.append(stack.pop());
+                operandStack.pop(); // "(" pop
+                continue;
+            }
+
+            // 3. 연산자일 경우, 우선순위 비교하여 우선순위가 높은 연산자가 스택에 있고 우선순위가 낮은 연산자일경우 우선순위 pop()
+            if (isOperator(letter)) {
+                while (!operandStack.isEmpty() && isPriorityGreaterThan(operandStack.peek(), letter)) {
+                    result.append(operandStack.pop());
                 }
-                stack.push(letter);
+                operandStack.push(letter);
             } else {
-                stringBuilder.append(letter);
+                result.append(letter);
             }
         }
 
-        while (!stack.isEmpty()) {
-            stringBuilder.append(stack.pop());
+        while (!operandStack.isEmpty()) {
+            result.append(operandStack.pop());
         }
-        System.out.println(stringBuilder.toString());
+        System.out.println(result.toString());
     }
 
     private static boolean isOpenBracket(final String letter) {
@@ -75,19 +88,15 @@ public class Q1918 {
     }
 
     private static int getPriority(final String letter) {
-        int priority = -1;
         switch (letter) {
             case PLUS_OPERATOR :
             case MINUS_OPERATOR :
-                priority = 1;
-                break;
+                return 1;
             case MULTIPLE_OPERATOR :
             case DIVIDE_OPERATOR :
-                priority = 2;
-                break;
+                return 2;
             default:
-                priority = 0;
+                return 0;
         }
-        return priority;
     }
 }

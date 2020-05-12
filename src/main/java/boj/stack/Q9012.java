@@ -3,8 +3,8 @@ package boj.stack;
 import java.io.*;
 
 public class Q9012 {
-    private static final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-    private static final BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
+    private static final BufferedReader BUFFERED_READER = new BufferedReader(new InputStreamReader(System.in));
+    private static final BufferedWriter BUFFERED_WRITER = new BufferedWriter(new OutputStreamWriter(System.out));
     private static final String OPEN_BRACKET = "(";
     private static final String CLOSE_BRACKET = ")";
     private static final String YES = "YES";
@@ -34,20 +34,20 @@ public class Q9012 {
             result.append(formatAnswer(checkVPS(source)));
         }
 
-        bufferedWriter.write(result.toString());
+        BUFFERED_WRITER.write(result.toString());
 
-        bufferedReader.close();
-        bufferedWriter.flush();
-        bufferedWriter.close();
+        BUFFERED_READER.close();
+        BUFFERED_WRITER.flush();
+        BUFFERED_WRITER.close();
     }
 
     private static int insertCount() throws IOException {
-        final String inputData = bufferedReader.readLine();
+        final String inputData = BUFFERED_READER.readLine();
         return Integer.valueOf(inputData);
     }
 
     private static String insertExample() throws IOException {
-        return bufferedReader.readLine();
+        return BUFFERED_READER.readLine();
     }
 
     private static boolean isNotEvenLength(final String source) {
