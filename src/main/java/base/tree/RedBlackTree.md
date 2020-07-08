@@ -86,7 +86,7 @@
     - γ는 원래 y보다 큼, LR연산 후에도 γ는 y보다 큼
     - β는 원래 x보다 크고 y보다 작음, LR연산 후에도 β는 x보다 크고 y보다 작음
 
-- pseudo
+- LR pseudo
     - x.right가 NIL NODE가 아니라고 가정
     - rootNode의 부모도 NIL NODE가 아니라고 가정
 ```
@@ -145,5 +145,173 @@ leftRotate(tree, node) {
                                      α     β 
 ```
 
+![LR](./img/example_LR.png)
 
-                  
+<br>
+
+
+
+## 4. 삽입
+- 보통 BST처럼 노드를 insert한다.
+- 차이점은 새로운 노드를 RED노드로 인식하고 새로운 노드의 부모가 RED노드일 수도 있기 때문에 <br>
+RBT의 조건을 조정하기 위해 fixup이라는 메서드를 호출하여 조정한다.
+- 시간 복잡도 : O(logN)
+    - insertFixUp에서 Case 1, 4에 해당할 경우 newNode가 2레벨 상승한다.
+    - Case 2, 3, 5, 6에 해당할 경우 O(1)
+    - 트리의 높이보다 더 많은 시간을 필요로 하지 않기 때문에 트리의 높이에 비례하는 시간복잡도를 가진다.
+- pseudo
+```
+insert(tree, newNode) {
+    x = rootNode;
+    y = NIL_NODE (null); // y = x of parent;
+    // 또다른 포인터 y를 사용해서 y가 x의 한칸 뒤를 쫓아 내려오록 해야 새로운 노드를 insert할 자리를 관리할 수 있다.
+
+    // 새로운 노드가 들어갈 자리를 찾는다.
+    while (x != null) {
+        y = x;
+        if (newNode.data < x.data) {
+            x = x.left;
+        } else {
+            x = x.rightl
+        }
+    }
+
+    newNode.parent = y;
+    if (y == null) { // while문을 한번도 실행하지 못하면 emptyTree라는 
+        tree.rootNode = newNode;
+    } else if (newNode.data < y.data) {
+        y.left = newNode;
+    } else {
+        y.right = newNode;
+    }
+    // 여기까지 일반 bst와 같다.
+
+    newNode.left = NIL_NODE (null);
+    newNode.right = NIL_NODE (null);
+    newNode.color = RED;
+    insertFixup(tree, newNode);
+}
+```                  
+### 4-1. INSERT - FIXUP
+- RBT의 조건이 위반될 수 있는 조건들
+     1. ~~각 노드들은 Red or Black 이다.~~
+        - **위반 가능성 없음**
+     2. 루트 노드는 항상 반드시 Black이다.
+        - 만약 새로운 노드가 RED노드로 해줬기 때문에 루트노드가 된다면 위반된다.
+        - 이런 경우는 그냥 루트 노드를 Black으로 바꿔주면 된다.
+     3. ~~모든 리프 노드(`NIL 노드`)는 Black이다.~~
+        - **위반 가능성 없음**
+     4. Red 노드는 연속해서 등장할 수 없다.
+        - **부모 노드가 원래 RED였다면, RED - RED 가 되므로 위반이 발생한다.**
+     5. ~~모든 노드에 대해서 어떤 노드로부터 자손인 리프 노드(`NIL 노드`)에 이르기까지 <br>
+         모든 경로는 동일한 갯수의 Black 노드가 존재한다.~~
+        - **위반 가능성 없음**
+- Loop Invariant
+    - 위의 문제들을 Loop를 돌면서 문제를 해결할건데, 루프 도는동안 변하지 않고 유지되는 조건들을 파악해보자.
+    1. New Node는 RED 노드이다.
+    2. 오직 하나의 위반만이 존재한다.
+        - 조건 2 : New Node가 루트이면서 RED
+        - 조건 4 : New Node와 New Node의 부모 둘다 RED인 경우
+    - 조건 4를 해결하기 위해 루프로 부모노드를 계속 타고 올라간다. 계속 올라가다 보면, 또 다른 RED - RED 위반이 있을 수 있다. <br>
+    최악의 경우 루트노드까지 타고올라가게 되면, 조건 2를 위반 한 것이므로 루트노드를 블랙으로 바꿔주고 종료하면 된다.
+    - 종료 조건 : newNode.parent가 black이 되면 종료한다. 조건 2가 위반일 경우 블랙으로 바꿔주고 종료한다.
+
+- 위반된 문제들을 6가지 케이스로 나눈다.
+    - 1, 2, 3 Case는 NewNode.parent가 NewNode.parent.parent의 왼쪽 자식인 경우
+    - 4, 5, 7 Case는 NewNode.parent가 NewNode.parent.parent의 오른쪽 자식인 경우
+    - NewNode.parent.parent가 반드시 존재하는 이유는 RED-RED 위반시 NewNode.parent도 RED 노드이므로 <br>
+    NewNode.parent.parent는 블랙노드라는 소리 이므로 존재할 수 밖에 없다.
+- case 1,2,3과 4,5,6은 대칭적이다.
+
+#### CASE 1 : NewNode의 부모 형제가 RED
+![case1](img/case1.png)
+
+<br>
+
+- 현재 B 노드가 우리가 새로 insert한 New Node라고 가정해보자.
+- A, B 노드 두개다 RED 노드 일경우, D 노드도 RED 노드여야 한다.
+1. newNode의 부모와 부모형제 컬러와 newNode.parent.parent 컬러를 바꾼다.
+    - 즉 newNode의 부모와 부모형제 컬러를 black으로
+    - newNode.parent.parent 컬러를 red로
+2. 할아버지 노드가 RED로 바뀌었을때, 할아버지의 부모도 RED일경우 해당 위치에서 해당 case에 맞는 연산을 수행한다.
+ 
+#### CASE 2, 3 : NewNode의 부모 형제가 Black
+![case2](img/case23.png)
+
+<br>
+
+- NewNode의 부모형제가 NIL_NODE 일 수도 있다.
+- case 2 : newNode가 오른쪽 자식인 경우
+    - newNode.parent에 대해서 LR연산을 수행하여 case 3과 같은 상황으로 맞춘다.
+- case 3 : newNode가 왼쪽 자식인 경우
+    - newNode.parent 색을 Black, newNode.parent.parent를 RED로 바꾼다.
+    - newNode.parent.parent에 대해서 RR 연산을 수행한다.
+    
+#### CASE 1, 2, 3 정리
+- Case 1의 문제를 해결하고 나면 문제는 종료되지 않는다. Case 2로 갈수도 있고, Case 3로 갈수도 있으며, 다시 Case 1의 문제가 반복해서 발생할 수 있다. <br>
+최악의 경우 루트노드까지 올라가서 RBT의 조건 2 루트 노드가 레드인 경우를 블랙으로 변경하면서 종료하게 된다.
+- Case 2는 발생하면, Case 3을 거쳐서 해결하면 종료된다.
+- Case 3의 경우 z의 할아버지 노드를 기준으로 RR하면 문제가 해결되고, 종료 된다.
+- Case 1, 2, 3의 경우에 해당하는 것이고, Case 1에서 Case 4, 5, 6으로 넘어갈 수도 있다.
+
+#### CASE 4, 5, 6
+- Case 1, 2, 3은 newNode.parent가 newNode.parent.parent의 왼쪽 자식인 경우들
+- Case 4, 5, 6은 newNode.parent가 newNode.parent.parent의 오른쪽 자식인 경우들
+- 결론적으로 Case 1, 2, 3과 대칭적이므로 4, 5, 6과 매칭이 된다.
+- Case 4의 문제를 해결하고 나면 문제가 해결된 것이 아니고, Case 4로 다시, 또는 Case 5, 6으로, Case 1, 2, 3으로 넘어갈 수도 있다.
+- Case 5의 경우 Case 6을 거쳐서 해결하면 종료된다.
+
+#### Insert Fixup 흐름
+![insertFixup_process](img/insertFixup_process.png)
+
+<br>
+
+- (a) : 새로운 노드(4)일 경우, 4의 부모가 할아버지의 왼쪽이므로 CASE 1,2,3중 하나에 해당하는데 4의 부모 형제 노드인 8이 RED이므로 CASE 1에 해당
+- (b) : 
+    - 4의 부모(5)와 형제 노드(8)의 색을 Black으로, 4의 할아버지(7)를 RED로 바꾼다. 
+    - 4의 할아버지(7)과 할아버지 부모(2)가 서로 RED-RED 위반하게 되어 할아버지 노드(7)을 새로운 노드로 관리한다.
+    - 새로운 노드(7)의 부모(2)가 할아버지(11)의 왼쪽이므로 또 CASE 1,2,3 중 하나에 해당한다. 
+    - 새로운 노드(7)의 부모(2) 형제(14)가 Black이고, 새로운 노드(7)가 부모(2)의 오른쪽에 해당하므로 CASE 2에 해당한다.
+- (c) : 2의 부모 기준(7)으로 LR연산 수행
+- (d) : 
+    - CASE 3에 해당하여 2의 부모(7) 색을 Black, 2의 할아버지(11)를 RED로 바꾼다.
+    - 2의 할아버지 11(기준)으로 RR연산 수행
+ 
+#### Insert Fixup pseudo
+```
+insertFixUp(tree, newNode) { 
+    /*
+        newNode의 부모가 RED인 경우 위반이 존재하여, 위반이 존재할때까지 루프.
+        newNode가 루트 노드가 되더라도 루트의 부모는 null(NIL NODE)이기에 탈출
+     */
+    while (newNode.parent.color == RED && newNode.parent != null) {
+        // case 1,2,3은 newNode의 할아버지 왼쪽 자식 노드가 newNode의 부모노드 인경우임
+        // 즉 해당 조건문은 case 1,2,3
+        if (newNode.parent == newNode.parent.parent.left) {
+            brotherNode = newNode.parent.parent.right;
+            // CASE 1
+            if (brotherNode.color == RED) { 
+                newNode.parent.color = BALCK;
+                brotherNode.color = BALCK;
+                newNode.parent.parent = RED;
+                newNode = newNode.parent.parent;
+            } else { // CASE 2, 3 => brotherNode.color == BLACK
+                // CASE 2
+                if (newNode == newNode.parent.right) { 
+                    newNode = newNode.parent; 
+                    leftRotate(tree, newNode);
+                }
+                // CASE 3
+                newNode.parent.color = BLACK;
+                newNode.parent.parent.color = RED;
+                rightRotate(tree, newNode.parent.parent);
+            }
+        } else { // case 4,5,6임. case 1,2,3 코드에서 right와 left만 바꿔주면 된다.
+            ...
+        }
+    }
+
+    // root가 red인 상횡에서 whlie문을 빠져나올 수 있기 때문에
+    tree.rootNode.color = BLACK;
+}
+```
