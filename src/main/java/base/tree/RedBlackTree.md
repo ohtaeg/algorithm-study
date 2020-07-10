@@ -2,6 +2,7 @@
 - BST의 3가지 기본연산은 트리 높이에 비례하는데, 최악일 경우 O(N)
 - 현실에서 정렬된 데이터가 insert가 되면 최악의 경우에 해당할 가능성이 높다.
 - BST의 기본 특징은 유지하면서 Tree의 밸런스가 무너지지 않도록 확장한 트리가 RBT 트리이다.
+- 각각의 노드가 레드 나 블랙 인 색상 속성을 가지고 있는 이진 탐색 트리이다
 - 균형잡힌 트리 (Balanced)라고 불리며, 높이가 O(logN)
     - 최악의 경우라도 O(logN)
     - 다만 insert, delete 연산이 복잡해지는 단점이 있다.
@@ -11,8 +12,10 @@
 - 루트의 부모 노드도 null이 아닌 `NIL 노드`를 가진다고 가정한다.
 - 즉, 실제 노드(내부 노드라고도 함)와 `NIL 노드`를 가진다.
     - 설명을 편하게 하기 위한 가상 노드이며 실제 구현을 위한 노드가 아니다. <br>
-![RBT_정의](./img/NIL_NODE.png)
+    
+![RBT_정의](img/rbt/NIL_NODE.png)
 
+<br>
 <br>
 
 ## 1. RBT의 조건
@@ -25,8 +28,10 @@
     - 부모 - 자식이 Black은 허용한다.
 5. **모든 노드에 대해서 어떤 노드로부터 자손인 리프 노드(`NIL 노드`)에 이르기까지 <br>
     모든 경로는 동일한 갯수의 Black 노드가 존재한다.**
+
+![RBT_정의](img/rbt/RBT_DEF.png)
+
 <br>
-![RBT_정의](./img/RBT_정의.png)
 <br>
 
 ## 2. RBT의 높이
@@ -41,7 +46,7 @@
     - RBT 특징 4. <br>
         > Red 노드는 연속해서 등장할 수 없다.
 
-4. 노드 X를 루트로 하는 임의의 서브트리는 **최소 2<sup>bh(x) - 1</sup> - 1**개의 내부 노드를 포함한다. (수학적 귀납법 증명)
+4. 노드 X를 루트로 하는 임의의 서브트리는 **최소 2<sup>bh(x)</sup> - 1**개의 내부 노드를 포함한다. (수학적 귀납법 증명)
     - bh(x) == 0이라면, 노드 X는 NIL 노드라는 뜻. 노드 X를 루트를 하는 서브 트리의 내부 노드 갯수는 최소 2<sup>bh(x)</sup> - 1 = 2<sup>0</sup> - 1 = 0개의 내부 노드를 가진다 (성립)
         ```
             (NIL)
@@ -61,10 +66,12 @@
                 
                   ...
         ```
-        - X의 두 자식 노드 A,B가 있고 각 자식노드의 블랙-트리 높이는 bh(X)-1이 된다. <br>
-                  A의 bh(A)는 2<sup>bh(X) - 1</sup> - 1 <br>
-                  B의 bh(B)는 2<sup>bh(X) - 1</sup> - 1 <br>
-        - 따라서 X를 루트로 하는 서브트리는 2 * (2<sup>bh(X) - 1</sup> - 1) + 1(X) = 2<sup>2</sup> - 1 = 3개의 내부 노드를 가진다 (성립)
+        - X의 두 자식 노드 A,B가 있고 각 자식노드의 블랙-트리 높이는 bh(X)-1이 된다.
+        - A의 bh(A)는 2<sup>bh(X) - 1</sup> - 1
+        - B의 bh(B)는 2<sup>bh(X) - 1</sup> - 1
+        - X가 A만 가지고 있다고 가정하면 A를 루트로하는 서브트리의 노드 갯수는 2<sup>2 - 1</sup> - 1 = 1개 + x노드 1개 = 2개 (성립)
+        - X가 A, B 둘다 가지고 있다고 가정하여 X를 루트로 하는 서브트리는 <br>
+        2 * (2<sup>bh(X) - 1</sup> - 1) + 1(X) = 2<sup>2</sup> - 1 = 3개의 내부 노드를 가진다 (성립)
 5. 위의 두 3,4번 특징으로 설명 가능한 것은 n개의 내부노드를 가지는 레드블랙트리의 높이는 2log(n+1) 이하이다.
     - n >= 2<sup>bh</sup> - 1 >= 2<sup>h/2</sup> - 1 이므로, 여기서 bh와 h는 각각 루트 노드의 블랙-높이와 높이
     - n >= 2<sup>h/2</sup> - 1  
@@ -72,12 +79,15 @@
     - log(N+1) >= h/2
     - 2log(N+1) >= h
 
+<br>
+<br>
+
 ## 3. 회전
 - search 연산은 BST와 같다.
 - insert, delete 연산을 알기전에 회전 연산을 배워야 한다.
 - 회전은 한 노드를 중심으로 부분적으로 노드의 모양을 수정하는 것.
 - 시간 복잡도 : O(1)
-![RBT_LR_RR](./img/RBT_LR_RR.png)
+![RBT_LR_RR](img/rbt/RBT_LR_RR.png)
 
 <br>
 
@@ -145,11 +155,10 @@ leftRotate(tree, node) {
                                      α     β 
 ```
 
-![LR](./img/example_LR.png)
+![LR](img/rbt/example_LR.png)
 
 <br>
-
-
+<br>
 
 ## 4. 삽입
 - 보통 BST처럼 노드를 insert한다.
@@ -191,8 +200,11 @@ insert(tree, newNode) {
     newNode.color = RED;
     insertFixup(tree, newNode);
 }
-```                  
-### 4-1. INSERT - FIXUP
+```
+
+<br>
+                  
+### 4.1 INSERT - FIXUP
 - RBT의 조건이 위반될 수 있는 조건들
      1. ~~각 노드들은 Red or Black 이다.~~
         - **위반 가능성 없음**
@@ -218,13 +230,13 @@ insert(tree, newNode) {
 
 - 위반된 문제들을 6가지 케이스로 나눈다.
     - 1, 2, 3 Case는 NewNode.parent가 NewNode.parent.parent의 왼쪽 자식인 경우
-    - 4, 5, 7 Case는 NewNode.parent가 NewNode.parent.parent의 오른쪽 자식인 경우
+    - 4, 5, 6 Case는 NewNode.parent가 NewNode.parent.parent의 오른쪽 자식인 경우
     - NewNode.parent.parent가 반드시 존재하는 이유는 RED-RED 위반시 NewNode.parent도 RED 노드이므로 <br>
     NewNode.parent.parent는 블랙노드라는 소리 이므로 존재할 수 밖에 없다.
 - case 1,2,3과 4,5,6은 대칭적이다.
 
 #### CASE 1 : NewNode의 부모 형제가 RED
-![case1](img/case1.png)
+![case1](img/rbt/insertFixup_case1.png)
 
 <br>
 
@@ -236,7 +248,7 @@ insert(tree, newNode) {
 2. 할아버지 노드가 RED로 바뀌었을때, 할아버지의 부모도 RED일경우 해당 위치에서 해당 case에 맞는 연산을 수행한다.
  
 #### CASE 2, 3 : NewNode의 부모 형제가 Black
-![case2](img/case23.png)
+![case2](img/rbt/insertFixup_case23.png)
 
 <br>
 
@@ -262,7 +274,7 @@ insert(tree, newNode) {
 - Case 5의 경우 Case 6을 거쳐서 해결하면 종료된다.
 
 #### Insert Fixup 흐름
-![insertFixup_process](img/insertFixup_process.png)
+![insertFixup_process](img/rbt/insertFixup_process.png)
 
 <br>
 
@@ -315,3 +327,220 @@ insertFixUp(tree, newNode) {
     tree.rootNode.color = BLACK;
 }
 ```
+
+<br>
+<br>
+
+## 5. 삭제
+- 보통 BST처럼 노드를 delete한다.
+- 실제로 삭제된 노드가 RED였으면 종료. <br>
+실제로 삭제된 노드가 BLACK이라면 RBT의 조건을 조정하기 위해 fixup이라는 메서드를 호출하여 조정한다.
+- pseudo
+```
+delete(tree, target) {
+    // 자식 노드가 0개이거나 1개라면
+    if (target != null && (target.left == null || target.right == null) {
+        // 실제로 삭제할 temp 변수에 옮긴다.
+        temp = target;
+    } else {
+        // 자식 노드가 2개라면 후행자를 찾는다.
+        temp = successor(target);
+    }
+
+    /* 
+        temp의 자식을 체크하는 이유는 temp가 삭제가 될것이기 떄문에
+        temp의 자식을 temp 위치로 옮겨 temp의 부모와 연결하기 위함
+    */
+    if (temp.left != null) { 
+        child = temp.left;
+    } else {
+        child = temp.right;
+    }
+
+    if (child != null) {
+        child.parent = temp.parent;
+    }
+
+    // 삭제할 부모 노드의 자식 링크들을 변경하는 부분
+    if (temp.parent == null) { // temp가 루트노드라면 
+        tree.rootNode = child;
+    } else if (temp.parent.left == temp) { // 삭제할 노드가 삭제할 부모의 왼쪽노드라면
+        temp.parent.left = child; // 왼쪽 child로 참조 변경
+    } else {
+        temp.parent.right = child; // 오른쪽 child로 참조 변경
+    }
+    
+    /*
+         case 3, 위에서 자식이 0,1개면 temp를 그대로 쓰지만 2개면 선행자를 가짐
+        후행자의 값을 삭제하려는 노드로 값을 옮긴다.
+    */
+    if (target != temp) {
+        target.data = temp.data;
+    }
+
+    /*
+        삭제한 노드가 RED이면 규칙에 위반되지 않아 종료
+        삭제한 노드가 BLACK이라면 규칙에 위반되어 fixup
+        - 삭제한 노드가 루트 노드인데 그 자리에 자식이 올라왔을때 자식이 RED일 경우
+        - RED - BLACK - RED의 구조에서 중간 Black 노드가 삭제가 되어 RED - RED가 연속될 수도 있다.
+            - 중간에 BLACK이 없어졌으므로 모든 경로에서 블랙노드 갯수가 일치한다는 조건이 성립되지 않는다.
+        - 이미 temp는 삭제했으므로, temp의 자식인 child를 파라미터로 넘긴다.
+     */
+    if (temp.color == BLACK) {
+        deleteFixup(tree, child);
+    }
+    return temp;
+}
+```
+
+### 5.1 DELETE FIXUP
+- **파라미터로 넘어온 삭제한 노드의 child는 NIL 노드 일 수 있다.**
+- **파라미터로 넘어온 삭제한 노드의 child가 RED 노드일 경우 해결하기 쉽다.**
+    - BLACK으로 바꿔버리면 끝
+- 파라미터로 넘어온 삭제한 노드의 child가 BLACK일 경우가 해결과정이 복잡하다.
+- 위반이 될 수 있는 규칙은 다음과 같다.
+    - 루트 노드는 Black이다. <br>
+      만약 삭제한 노드가 루트였고, child가 RED인 경우 위반된다. BLACK으로 바꿔버리면 끝
+    - RED - BLACK - RED의 구조에서 중간 Black 노드가 삭제가 되어 RED - RED가 연속될 수도 있다.<br>
+      child를 BLACK으로 바꾸면 끝
+    - **모든 노드에 대해서 그 노드로부터 자손인 리프 노드에 이르는 모든 경로엔 동일한 BLACK 노드의 갯수가 존재한다.**
+        - **RED - BLACK - RED의 구조에서 중간 Black 노드가 삭제가 되어 삭제한 노드를 포함한 모든 경로는 BLACK 노드 하나가 부족해졌다.**
+
+### 5.2 문제 해결
+- 위에 마지막에 언급된 경로상 동일 BLACK노드의 갯수가 달라지는 문제는 다음과 같이 해결한다.
+    - 노드 child에 Extra Black이라는 가상의 BLACK 노드를 부여하여 조건 5를 만족하도록 한다.
+        - 즉, 노드 child는 검은색을 두개 가지고 있게 하는 임시 방법이다. (자식 개념이 아님)
+        - 노드 child는 Double Black 혹은 Red & Black이 된다.
+    - **문제 해결의 종료조건은 해당 Double Black 혹은 Red & Black를 일반적인 Black 노드로 바꾸는 것**
+- Double Black인 상태에서 extra BLACK을 위쪽으로 올려보낸다. 올리다보면 부모가 RED 노드여서 Red & Black이 될 경우 해당 RED를 제거한다. 
+- 만약 최악으로 트리 위쪽까지 전부 BLACK일 경우 루트 노드까지 올리게 된다. 루트 노드가 Double Black이 되면 Extra Black을 제거한다.
+
+<br>
+
+- Loop Invariant
+    - 노드 child는 루트가 아닌 Double Black 노드
+    - **노드 child의 형제 노드를 Bro Node라고 할때, Bro 노드는 NIL 노드가 될 수 없다.**
+        - NIL 노드가 된다면 child 노드의 부모에 대해 조건5가 위배된다.
+
+<br>
+
+- DELETE의 경우 8가지 case로 분류된다.
+    - insert와 마찬가지로 1,2,3,4 / 5,6,7,8은 대칭이다.
+- CASE 1,2,3,4 : 노드 child가 부모의 왼쪽 자식일 경우
+- CASE 5,6,7,8 : 노드 child가 부모의 오른쪽 자식일 경우
+
+#### CASE 1 - child의 형제 노드 bro가 RED인 경우
+- Bro 노드는 자식노드가 NIL 노드가 아닌 BLACK 노드 이다.
+    - Case 1인 경우 Bro 노드의 자식노드가 NIL 노드라면 조건5가 위배된다.
+- Bro 노드의 색을 BLACK으로, child 노드의 부모 노드를 RED로 바꾼 뒤, child의 부모 노드에 대해 Left Rotation을 수행한다.
+- LR을 수행하고나면 child 노드는 여전히 Double Black이며 레벨 하나가 낮아지게 된다. Extra Black 노드를 올리기 위한 2보전진을 위한 1보 후퇴이다.
+- child의 새로운 형제 노드는 원래 Bro 노드의 자식 노드가 오게된다.
+- 새로운 Bro 노드가 RED가 아닌 BLACK이므로, Case 2 or 3 or 4로 넘어간다. <br>
+![delete_fixup_case1](img/rbt/delete_fixup_case1.png)
+
+<br>
+
+#### CASE 2 - Bro가 Black, Bro의 자식들도 Black
+- Case 2,3,4는 Bro 노드가 Black 이다.
+- Case 1을 거쳐오는건지, 바로 Case 2로 오는건지 알 수 없기 때문에 child의 부모가 RED인지 BLACK인지 알 수 없다.
+    - Case 1로 진입한 경우, child의 부모는 RED, 바로 진입한 경우는 BLACK
+- 현재 child는 Double Black, Bro는 Black이므로, 이 상황에서 child와 Bro 노드의 Black을 하나씩 뺏고 부모 노드에게 전달한다.
+- child는 Extra Black 하나를 위로 올리게 되어 (뺏기게 되어) 일반적인 Black 노드가 된다.
+    - child의 부모에게 Extra Black을 넘겨주어 조건 5가 충족된다. 
+- Bro 노드는 Black을 빼앗겨서 Red가 된다.
+- child의 부모가 RED일 경우, Red & Black이 되어 RED를 제거하고 BLACK으로 변경한다.
+    - child는 일반 BLACK노드가 되어 fixup이 종료된다.
+- child의 부모가 BLACK일 경우 부모 노드를 새로운 child로 간주하고 다시 해당되는 case를 수행한다. <br>
+
+![delete_fixup_case2](img/rbt/delete_fixup_case2.png)
+
+<br>
+
+#### CASE 3 - Bro가 Black, Bro의 왼쪽 자식이 RED (오른쪽은 Black)
+- Bro 노드 색을 RED로, Bro 노드의 왼쪽 자식 색을 Black으로
+- Bro 노드에 대해서 Right Rotation 연산 수행
+- 연산 수행 후 child의 형제가 새로 바뀌고 바뀐 Bro 노드의 오른쪽 자식은 RED가 되어 CASE 4를 수행한다. <br>
+
+![delete_fixup_case3](img/rbt/delete_fixup_case3.png)
+
+<br>
+
+#### CASE 4 - Bro가 Black, Bro의 오른쪽 자식이 RED (왼쪽은 Black)
+- Bro의 색을 child.parent색으로 변경
+- child.parent의 색을 BLACK으로 변경
+- child.parent에 대해 Left Rotation을 수행
+- child의 Extra Black을 제거하고 child를 루트 노드로 변경하고 종료
+    - 기존의 child 노드를 지나는 Black 노드의 갯수는 로테이션 전과 같다.
+    - 루트 노드로 변경하게 되면 로직에 의해 종료됨.;
+
+<br>
+
+![delete_fixup_case4](img/rbt/delete_fixup_case4.png)
+
+<br>
+
+#### Delete Fixup CASE 흐름
+![delete_fixup_process](img/rbt/delete_fixup_process.png) <br>
+![delete_fixup_process2](img/rbt/delete_fixup_process2.png)
+
+<br>
+
+- pseudo
+```
+deleteFixup(tree, child) {
+    // 루트 노드 그리고 RED가 아닐때만 수행 (RED라면 바로 while문을 벗어나서 BLACK으로 바꿔주는 연산 수행)
+    while (child != tree.rootNode && child.color != BLACK) {
+
+        // child가 parent의 왼쪽 자식이면 CASE 1,2,3,4
+        if (child.parent.left == child) {
+            broNode = child.parent.right;
+
+            // CASE 1
+            if (broNode.color == RED) { 
+                broNode.color = BLACK;
+                broNode.parent.color = RED;
+                leftRotation(tree, bro.parent);
+                broNode = child.parent.right;
+            }
+
+            
+            if (broNode.color == BLACK) {
+                // CASE 2
+                if (broNode.left.color == BLACK && broNode.right.color == BLACK) {
+                    broNode.color = RED;
+                    child = child.parent;
+                } else {
+                    // CASE 3
+                    if (broNode.left.color = RED) {
+                        broNode.color = RED;
+                        broNode.left.color = BLACK;
+                        rightRotation(tree, broNode);
+                        broNode = child.parent.right;
+                    }
+                    
+                    // CASE 4
+                    broNode.color = child.parent.color;
+                    child.parent.color = BLACK;
+                    bro.right.color = BLACK;
+                    leftRotation(tree, child.parent);
+                    child = tree.rootNode;
+                }
+            }
+        } else { // case 5, 6, 7 8
+            // right <-> left
+        }
+    }
+    child.color = BLACK;
+}
+```
+- 시간복잡도
+    - DELETE : O(logN)
+    - FIX UP : O(logN)
+    - 가장 최악인 경우는 case 2, 6이 반복되는 경우인데, 최대 트리 높이만큼 실행된다.
+    - 그래서 DELETE + FIX UP을 수행해도 최대 O(logN)
+
+
+
+      
+      
+   
