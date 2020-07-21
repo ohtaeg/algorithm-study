@@ -21,47 +21,45 @@ public class Q1874 {
     private static final String PLUS = "+\n";
     private static final String MINUS = "-\n";
     private static final String NO = "NO";
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        Stack<Integer> stack = new Stack<>();
-        StringBuilder result = new StringBuilder();
-        int cursor = 0;
-        int size = Integer.valueOf(br.readLine());
-        int num = -1;
+    private static final int ZERO = 0;
 
-        while (size-- > 0) {
-            num = Integer.valueOf(br.readLine());
-            if (num > cursor) {
-                while (num > cursor) {
-                    stack.push(++cursor);
-                    result.append(PLUS);
-                }
-                stack.pop();
-                result.append(MINUS);
-            } else {
-                boolean isFound = false;
-                if (!stack.isEmpty()) {
-                    int top = stack.peek();
+    public static void main(String[] args) throws IOException {
+        StringBuilder result = new StringBuilder();
+        Stack<Integer> stack = new Stack<>();
+
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out))) {
+            int count = Integer.parseInt(bufferedReader.readLine());
+            int[] sources = new int[count];
+            int last = ZERO;
+
+            for (int i = ZERO; i < count; i++) {
+                sources[i] = Integer.parseInt(bufferedReader.readLine());
+            }
+
+            for (int i = ZERO; i < count; i++) {
+                int input = sources[i];
+                if (input > last) {
+                    while (input > last) {
+                        stack.push(++last);
+                        result.append(PLUS);
+                    }
                     stack.pop();
                     result.append(MINUS);
-
-                    if (top == num) {
-                        isFound = true;
+                } else {
+                    if (!stack.isEmpty()) {
+                        final int top = stack.pop();
+                        if (top == input) {
+                            result.append(MINUS);
+                        } else {
+                            result = new StringBuilder(NO);
+                            break;
+                        }
                     }
                 }
-
-                if (!isFound) {
-                    result = new StringBuilder();
-                    result.append(NO);
-                    break;
-                }
             }
-        }
 
-        br.close();
-        bw.write(result.toString());
-        bw.flush();
-        bw.close();
+            bufferedWriter.write(result.toString());
+        }
     }
 }
