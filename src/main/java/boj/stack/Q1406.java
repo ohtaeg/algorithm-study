@@ -14,54 +14,66 @@ public class Q1406 {
     private static final String L = "L";
     private static final String D = "D";
     private static final String B = "B";
-    private static final String P = "P";
 
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        Stack<String> leftStack = new Stack();
-        Stack<String> rightStack = new Stack();
-        String command = null;
-        int commandCount = -1;
+        Stack<String> sourceStack = new Stack<>();
+        Stack<String> leftStack = new Stack<>();
 
-        // 한문자씩 쪼개서 leftStack에 push
-        String source = br.readLine();
-        for (char ch : source.toCharArray()) {
-            leftStack.push(String.valueOf(ch));
-        }
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out))) {
 
-        // 명렁어 갯수만큼 반복
-        commandCount = Integer.parseInt(br.readLine());
-        while (commandCount-- > 0) {
-            command = br.readLine();
-            // 왼쪽으로 커서를 옮기되, 왼쪽스택이 비어있지 않을때만 커서 이동
-            if (L.equals(command) && !leftStack.isEmpty()) {
-                rightStack.push(leftStack.pop());
-            // 오른쪽으로 커서를 옮기되, 오른쪽 스택이 비어있지 않을때만 커서 이동
-            } else if (D.equals(command) && !rightStack.isEmpty()) {
-                leftStack.push(rightStack.pop());
-            // 왼쪽 스택에 값이 있을때만 remove
-            } else if (B.equals(command) && !leftStack.isEmpty()) {
-                leftStack.pop();
-            } else if (P.equals(command.split(" ")[0])){
-                leftStack.push(command.split(" ")[1]);
+            pushSourcesInStack(bufferedReader.readLine(), sourceStack);
+
+            int commandCount = Integer.parseInt(bufferedReader.readLine());
+            while (commandCount-- > 0) {
+                String command = bufferedReader.readLine();
+                executeCommand(command, sourceStack, leftStack);
             }
-        }
 
-        // move leftstack -> rightstack
-        while (!leftStack.isEmpty()) {
-            rightStack.push(leftStack.pop());
+            reArrange(sourceStack, leftStack);
+            bufferedWriter.write(getResult(leftStack));
         }
+    }
 
-        // result
+    private static void pushSourcesInStack(final String source, final Stack<String> sourceStack) {
+        for (int i = 0; i< source.length(); i++) {
+            sourceStack.push(source.substring(i, i + 1));
+        }
+    }
+
+    private static void executeCommand(final String command, final Stack<String> sourceStack, final Stack<String> leftStack) {
+        switch (command) {
+            case L :
+                if (!sourceStack.isEmpty()) {
+                    leftStack.push(sourceStack.pop());
+                }
+                break;
+            case D :
+                if (!leftStack.isEmpty()) {
+                    sourceStack.push(leftStack.pop());
+                }
+                break;
+            case B :
+                if (!sourceStack.isEmpty()) {
+                    sourceStack.pop();
+                }
+                break;
+            default :
+                sourceStack.push(command.split(" ")[1]);
+        }
+    }
+
+    private static void reArrange(final Stack<String> sourceStack, final Stack<String> leftStack) {
+        while (!sourceStack.isEmpty()) {
+            leftStack.push(sourceStack.pop());
+        }
+    }
+
+    private static String getResult(final Stack<String> stack) {
         StringBuilder result = new StringBuilder();
-        while (!rightStack.isEmpty()) {
-            result.append(rightStack.pop());
+        while (!stack.isEmpty()) {
+            result.append(stack.pop());
         }
-
-        br.close();
-        bw.write(result.toString());
-        bw.flush();
-        bw.close();
+        return result.toString();
     }
 }
