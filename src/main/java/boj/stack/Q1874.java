@@ -23,7 +23,7 @@ public class Q1874 {
     private static final String NO = "NO";
     private static final int ZERO = 0;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         StringBuilder result = new StringBuilder();
         Stack<Integer> stack = new Stack<>();
 
@@ -60,6 +60,8 @@ public class Q1874 {
             }
 
             bufferedWriter.write(result.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

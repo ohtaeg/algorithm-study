@@ -15,7 +15,7 @@ public class Q1406 {
     private static final String D = "D";
     private static final String B = "B";
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Stack<String> sourceStack = new Stack<>();
         Stack<String> leftStack = new Stack<>();
 
@@ -32,6 +32,8 @@ public class Q1406 {
 
             reArrange(sourceStack, leftStack);
             bufferedWriter.write(getResult(leftStack));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
