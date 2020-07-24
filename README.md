@@ -1,23 +1,25 @@
 # 알고리즘 공부
-### 기본 정렬
-- Bubble
-- Selection
-- Insertion
-- Merge (recursion, non recursion)
-- Quick (recursion, non recursion)
-- Heap  (recursion, non recursion)
-    - Max Heap
-    - Min Heap
 
-<br>
+## Base
+- 정렬
+    - Bubble
+    - Selection
+    - Insertion
+    - Merge (recursion, non recursion)
+    - Quick (recursion, non recursion)
+    - Heap  (recursion, non recursion)
+        - Max Heap
+        - Min Heap
 
-### 트리
-- 이진 탐색 트리
-- 레드 블랙 트리
-- AVL 트리
-- B-트리
+- 트리
+    - 이진 탐색 트리
+    - 레드 블랙 트리
+    - AVL 트리
+    - B +- 트리
 
-<br>
+- SWAP (only bit, not use temp variable)
+- Hash
+---
 
 ### 프로그래머스 
 - 레벨 1
@@ -35,10 +37,8 @@
         - [x] 위장
 - 레벨 3
     - [x] 베스트 앨범
-- 레벨 4
-
-> [문제 출처: 프로그래머스](https://programmers.co.kr/learn/challenges)
 ---
+
 ### 백준
 - Stack
     - [x] 에디터 [(1406)](https://www.acmicpc.net/problem/1406)
