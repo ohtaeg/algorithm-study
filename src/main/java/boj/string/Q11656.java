@@ -14,16 +14,28 @@ public class Q11656 {
         StringBuilder builder = new StringBuilder();
         String[] suffixes = new String[source.length()];
 
-        for (int i=0; i<source.length(); i++) {
+        for (int i = 0; i < source.length(); i++) {
             suffixes[i] = source.substring(i);
         }
 
-        // TODO : Refactoring - .sort()를 이용하지 말고 직접 문자열 정렬을 해보자.
-        Arrays.sort(suffixes);
-
-        for (int i=0; i<source.length(); i++) {
-            builder.append(suffixes[i]).append("\n");
+        //Arrays.sort(suffixes);
+        final String[] sorted = textSort(suffixes);
+        for (int i = 0; i < source.length(); i++) {
+            builder.append(sorted[i]).append(System.lineSeparator());
         }
         System.out.println(builder.toString());
+    }
+
+    public static String[] textSort(String[] words) {
+        for (int i = 0; i < words.length; i++) {
+            for (int j = i + 1; j < words.length; j++) {
+                if (words[i].compareTo(words[j]) > 0) {
+                    String temp = words[i];
+                    words[i] = words[j];
+                    words[j] = temp;
+                }
+            }
+        }
+        return words;
     }
 }
