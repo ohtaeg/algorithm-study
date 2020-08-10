@@ -4,13 +4,13 @@ import java.util.Stack;
 
 public class Quick {
     public static void main(String[] args) {
-        int[] arr = new int[]{29, 14, 10, 37, 13, 10, 1};
+        int[] arr = {29, 14, 17, 13, 10, 1};
         Quick.sort(arr, 0, arr.length - 1);
         print(arr);
 
         System.out.println("=== non recursive using stack ===");
 
-        int[] arr2 = new int[]{29, 14, 10, 37, 13, 10, 1};
+        int[] arr2 = {29, 14, 17, 13, 10, 1};
         Quick.sortUsingStack(arr2, 0, arr2.length - 1);
         print(arr2);
     }
@@ -58,7 +58,7 @@ public class Quick {
         int right = end;
 
         // 두 인덱스가 지나칠때까지 반복
-        while (left < right) {
+        while (left <= right) {
 
             // 전반부쪽에서 피벗보다 작으면 무시하고 인덱스를 오른쪽으로 ->
             while (arr[left] < pivotValue) {
