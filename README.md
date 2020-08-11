@@ -55,6 +55,9 @@
 
 - Queue
     - [x] 조세퍼스 순열 [(1158)](https://www.acmicpc.net/problem/1158)
+    - [x] 프린터 큐 [(1966)](https://www.acmicpc.net/problem/1966)
+    - [X] 카드2 [(2164)](https://www.acmicpc.net/problem/2164)
+    - [x] 요세퍼스 순열0 [(11866)](https://www.acmicpc.net/problem/11866)
     - [x] 큐2 [(18258)](https://www.acmicpc.net/problem/18258)
 
 - Deck
