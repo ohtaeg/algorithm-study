@@ -61,6 +61,8 @@
     - [x] 큐2 [(18258)](https://www.acmicpc.net/problem/18258)
 
 - Deck
+    - [x] 회전하는 큐 [(1021)](https://www.acmicpc.net/problem/1021)
+    - [x] AC [(5430)](https://www.acmicpc.net/problem/5430)
     - [x] 덱 구현 [(10866)](https://www.acmicpc.net/problem/10866)
 
 - 정렬
