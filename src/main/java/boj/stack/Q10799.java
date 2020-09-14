@@ -6,26 +6,42 @@ import java.io.InputStreamReader;
 import java.util.Stack;
 
 public class Q10799 {
-    private static final String OPEN_BRACKET = "(";
+    private static final char OPEN_BRACKET = '(';
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        Stack<Integer> stack = new Stack<>();
         String source = br.readLine();
-        int index = 1;
-        int sum = 0;
+        int result = cut(source);
+        System.out.println(result);
+        br.close();
+    }
 
-        for (char ch : source.toCharArray()) {
-            if (String.valueOf(ch).equals(OPEN_BRACKET)) {
-                stack.push(index++);
+    private static int cut(final String source) {
+        final Stack<Integer> stack = new Stack<>();
+        int result = 0;
+        int bracketSequence = 0;
+        for (char bracket : source.toCharArray()) {
+            if (isOpenBracket(bracket)) {
+                stack.push(bracketSequence++);
             } else {
-                if (!stack.isEmpty() && stack.pop() == index - 1) {
-                    sum += stack.size();
+                if (isLaser(stack, bracketSequence)) {
+                    result += stack.size();
                 } else {
-                    sum += 1;
+                    result++;
                 }
             }
         }
-        System.out.println(sum);
-        br.close();
+        return result;
+    }
+
+    private static boolean isOpenBracket(final char bracket) {
+        return bracket == OPEN_BRACKET;
+    }
+
+    private static boolean isLaser(final Stack<Integer> stack, final int bracketSequence) {
+        if (stack.isEmpty()) {
+            throw new RuntimeException("왼쪽 괄호가 없을 수 없습니다.");
+        }
+        return stack.pop() == bracketSequence - 1;
     }
 }
