@@ -31,15 +31,15 @@
         - [x] 시각
         - [x] 왕실의 나이트
         - [x] 게임 개발
-    - [ ] DFS/BFS 
+    - [X] DFS/BFS 
         - [X] DFS 구현
             - [x] 인접 행렬 (recursion, non recursion) 
             - [x] 인접 리스트 (recursion, non recursion) 
         - [x] BFS 구현
             - [x] 인접 행렬
             - [x] 인접 리스트
-        - [ ] 음료수 얼려 먹기
-        - [ ] 미로 탈출 
+        - [X] 음료수 얼려 먹기
+        - [X] 미로 탈출 
     - [ ] 정렬
     - [ ] 이진 탐색
 
