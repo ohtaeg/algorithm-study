@@ -50,8 +50,6 @@ public class GameDevelopment {
             if (character.canMoveForward(map)) {
                 map[character.getX()][character.getY()] = 1;
                 character.moveForward();
-            } else {
-                continue;
             }
         }
         return character.getMoveCount();
