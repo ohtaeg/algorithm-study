@@ -45,4 +45,11 @@ swap(0, 2);
 
 - 동일 값의 순서가 바뀜을 확인할 수 있다.
  
-    
+### 자바에서의 정렬은 어떤 정렬을 사용할까?
+- 내부를 들여다보면 Collections.sort 사용시 Object array를 정렬하는 경우 기본으로 Tim Sort를 사용한다.
+    - Tim Sort = merge + insertion   
+    - 별도의 프로퍼티 값을 설정하지 않으면 Tim sort, 별도의 프로퍼티 값을 설정하면 merge sort를 실행한다.
+- Collection.sort 내부를 보면 Arrays.sort를 사용한다.
+    - Arrays.sort는 기본 타입을 정렬하게 되면 Double Pivot Quick Sort를 한다.
+    - 무조건 Double Pivot Quick Sort를 하는게 아니라 내부 조건에 따라 Quick 대신 Insertion을 수행한다.
+    - 만약 기본 타입이 아닌 Object array를 정렬해야 된다면 Collection.sort 처럼 세팅값이 있으면 legacy merge, 아니면 Tim sort를 사용한다.
