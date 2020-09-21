@@ -44,7 +44,10 @@
         - [x] 위에서 아래로
         - [x] 성적이 낮은 순서로 학생 출력하기
         - [x] 두 배열의 원소 교체
-    - [ ] 이진 탐색
+    - [x] 이진 탐색
+        - [x] 이진 탐색 구현 (recursion, non recursion)
+        - [x] 부품 찾기
+        - [x] 떡볶이 떡 만들기
 
 ---
 
@@ -83,6 +86,7 @@
     - [x] 문자열 정렬 [(11656)](https://www.acmicpc.net/problem/11656)
     
 - 기초 수학
+    - [x] 8진수 2진수 [(1212)](https://www.acmicpc.net/problem/1212)
     - [x] 소수 구하기 [(1929)](https://www.acmicpc.net/problem/1929)
     - [x] 최소공배수 [(1934)](https://www.acmicpc.net/problem/1934)
     - [x] 소수 찾기 [(1978)](https://www.acmicpc.net/problem/1978)
