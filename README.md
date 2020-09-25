@@ -95,15 +95,28 @@
     - [x] 문자열 정렬 [(11656)](https://www.acmicpc.net/problem/11656)
     
 - 기초 수학
-    - [x] 8진수 2진수 [(1212)](https://www.acmicpc.net/problem/1212)
-    - [x] 소수 구하기 [(1929)](https://www.acmicpc.net/problem/1929)
-    - [x] 최소공배수 [(1934)](https://www.acmicpc.net/problem/1934)
-    - [x] 소수 찾기 [(1978)](https://www.acmicpc.net/problem/1978)
-    - [x] 최대공약수, 최대공배수 [(2609)](https://www.acmicpc.net/problem/2609)
-    - [x] 골드바흐의 추측 [(6588)](https://www.acmicpc.net/problem/6588)
-    - [x] 골드바흐의 추측 [(9020)](https://www.acmicpc.net/problem/9020)
-    - [x] 팩토리얼 [(10872)](https://www.acmicpc.net/problem/10872)
-    - [x] 팩토리얼 0의 갯수 [(1676)](https://www.acmicpc.net/problem/1676)
+    - 진법
+        - [x] 8진수 2진수 [(1212)](https://www.acmicpc.net/problem/1212)
+        - [x] 2진수 8진수 [(1373)](https://www.acmicpc.net/problem/1373)
+        - [x] -2진수 [(2089)](https://www.acmicpc.net/problem/2089)
+        - [x] 진법 변환 [(2745)](https://www.acmicpc.net/problem/2745)
+        - [x] 진법 변환2 [(11005)](https://www.acmicpc.net/problem/11005)
+        - [x] Base Conversion [(11576)](https://www.acmicpc.net/problem/11576)
+    - 소수
+        - [x] 소수 구하기 [(1929)](https://www.acmicpc.net/problem/1929)
+        - [x] 소수 찾기 [(1978)](https://www.acmicpc.net/problem/1978)
+        - [x] 소인수분해 [(11653)](https://www.acmicpc.net/problem/11653)
+        - [x] 골드바흐의 추측 [(6588)](https://www.acmicpc.net/problem/6588)
+        - [x] 골드바흐의 추측 [(9020)](https://www.acmicpc.net/problem/9020)
+        - [x] 골드바흐의 파티션 [(17103)](https://www.acmicpc.net/problem/17103)
+    - 최대 공약수, 최대 공배수
+        - [x] 최소공배수 [(1934)](https://www.acmicpc.net/problem/1934)
+        - [x] 최대공약수, 최대공배수 [(2609)](https://www.acmicpc.net/problem/2609)
+        - [x] GCD 합 [(9613)](https://www.acmicpc.net/problem/9613)
+        - [x] 숨바꼭질 6 [(17087)](https://www.acmicpc.net/problem/17087)
+    - 팩토리얼
+        - [x] 팩토리얼 [(10872)](https://www.acmicpc.net/problem/10872)
+        - [x] 팩토리얼 0의 갯수 [(1676)](https://www.acmicpc.net/problem/1676)
     
 - 재귀
     - [x] 하노이 탑 [(1914)](https://www.acmicpc.net/problem/1914)
