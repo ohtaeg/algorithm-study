@@ -9,6 +9,7 @@ public class Q6588 {
     private static final String WRONG = "Goldbach's conjecture is wrong.";
     private static final int EXIT_0 = 0;
     private static final int N_MAX_SIZE = 1000000;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -17,11 +18,11 @@ public class Q6588 {
         int[] primes = new int[N_MAX_SIZE];
         boolean[] multipleChecks = new boolean[N_MAX_SIZE + 1];
         int primeCount = 0;
-        for (int i=2; i <= N_MAX_SIZE; i++) {
+        for (int i = 2; i <= N_MAX_SIZE; i++) {
             if (!multipleChecks[i]) {
                 primes[primeCount++] = i;
             }
-            for (int j = i+i; j <= N_MAX_SIZE; j+=i) {
+            for (int j = i + i; j <= N_MAX_SIZE; j += i) {
                 multipleChecks[j] = true;
             }
         }
@@ -34,7 +35,7 @@ public class Q6588 {
             if (n == EXIT_0) {
                 break;
             }
-            for (int i=1; i<n; i++) {
+            for (int i = 1; i < n; i++) {
                 // n = a + b 일때, b - a가 최대값이려면 n - a = b를 구하면 된다.
                 // n - a = b를 구할때 b가 소수인지 확인을 해주어야 한다.
                 // ex) 12 = 3 + 9 둘다 홀수이지만 9는 소수가 아니기 때문 5 + 7이 b-a의 최대값이 된다.

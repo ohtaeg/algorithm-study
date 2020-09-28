@@ -10,7 +10,7 @@ public class Q1676 {
         br.close();
 
         int fiveCount = 0;
-        for (int i=1; i<=n; i++) {
+        for (int i = 1; i <= n; i++) {
             if (i % 5 == 0) {
                 fiveCount++;
             }

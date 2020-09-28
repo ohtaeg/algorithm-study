@@ -35,7 +35,7 @@ public class Q1929 {
         for (int i = 2; i <= n; i++) {
             if (!check[i]) { // 지워지지 않았다면
                 primes[primeCount++] = i;
-                for (int j= i+i; j<=n; j+=i) {
+                for (int j = i + i; j <= n; j += i) {
                     check[j] = true;
                 }
             }
@@ -44,7 +44,7 @@ public class Q1929 {
     }
 
     private static void print(final int[] primes, final int m, final int n) {
-        for (int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             if (primes[i] >= m) {
                 System.out.println(primes[i]);
             }
