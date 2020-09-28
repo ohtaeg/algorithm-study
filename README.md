@@ -52,12 +52,16 @@
     - [x] 그리디
         - [x] 모험가 길드 
         - [x] 곱하기 혹은 더하기 
-        - [x] 문자열 뒤집기
-            - 백준 1439
+        - [x] 문자열 뒤집기 [(1439)](https://www.acmicpc.net/problem/1439)
         - [x] 만들 수 없는 금액
         - [x] 볼링공 고르기
-        - [x] 무지의 먹방 라이브
-            - 프로그래머스 2019 카카오 신입 공채 4번
+        - [x] 무지의 먹방 라이브 [2019 카카오 신입 공채 4번](https://programmers.co.kr/learn/courses/30/lessons/42891)
+    - [x] 정렬
+        - [x] 국영수 [(10825)](https://www.acmicpc.net/problem/10825)
+        - [x] 안테나 [(18310)](https://www.acmicpc.net/problem/18310)
+        - [x] 실패율 [2019 카카오 신입 공채 2번](https://programmers.co.kr/learn/courses/30/lessons/42889)
+        - [x] 카드 정렬하기 [(1715)](https://www.acmicpc.net/problem/1715)
+               
 ---
 
 ### 백준
