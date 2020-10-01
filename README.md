@@ -56,6 +56,9 @@
         - [x] 만들 수 없는 금액
         - [x] 볼링공 고르기
         - [x] 무지의 먹방 라이브 [2019 카카오 신입 공채 4번](https://programmers.co.kr/learn/courses/30/lessons/42891)
+    - [x] 구현
+        - [x] 럭키 스트레이트 [18406](https://www.acmicpc.net/problem/18406)    
+        - [x] 문자열 재정렬    
     - [x] 정렬
         - [x] 국영수 [(10825)](https://www.acmicpc.net/problem/10825)
         - [x] 안테나 [(18310)](https://www.acmicpc.net/problem/18310)
@@ -121,6 +124,16 @@
     - 팩토리얼
         - [x] 팩토리얼 [(10872)](https://www.acmicpc.net/problem/10872)
         - [x] 팩토리얼 0의 갯수 [(1676)](https://www.acmicpc.net/problem/1676)
+
+- 브루트 포스
+    - [x] 일곱 난쟁이 [(2309)](https://www.acmicpc.net/problem/2309)
+    - [x] 사탕 게임 [(3085)](https://www.acmicpc.net/problem/3085)
+    - [x] 날짜 계산 [(1476)](https://www.acmicpc.net/problem/1476)
+    - [x] 리모컨 [(1107)](https://www.acmicpc.net/problem/1107)
+    - [x] 테트로미노 [(14500)](https://www.acmicpc.net/problem/14500)
+    - [x] 카잉 달력 [(6064)](https://www.acmicpc.net/problem/6064)
+    - [x] 수 이어 쓰기 1 [(1748)](https://www.acmicpc.net/problem/1748)
+    - [x] 1, 2, 3, 더하기 [(9095)](https://www.acmicpc.net/problem/9095)
     
 - 재귀
     - [x] 하노이 탑 [(1914)](https://www.acmicpc.net/problem/1914)
