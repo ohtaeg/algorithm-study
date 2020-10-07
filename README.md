@@ -59,6 +59,10 @@
     - [x] 구현
         - [x] 럭키 스트레이트 [18406](https://www.acmicpc.net/problem/18406)    
         - [x] 문자열 재정렬    
+        - [x] 문자열 압축 [2020 카카오 신입 공채 1번](https://programmers.co.kr/learn/courses/30/lessons/60057)    
+        - [x] 자물쇠와 열쇠 [2020 카카오 신입 공채 3번](https://programmers.co.kr/learn/courses/30/lessons/60059)    
+        - [x] 뱀 [삼성 SW 역량 테스트 기출문제](https://www.acmicpc.net/problem/3190)
+        - [ ] 기둥과 보 설치 (ing) [2020 카카오 신입 공채 5번](https://programmers.co.kr/learn/courses/30/lessons/60061)   
     - [x] 정렬
         - [x] 국영수 [(10825)](https://www.acmicpc.net/problem/10825)
         - [x] 안테나 [(18310)](https://www.acmicpc.net/problem/18310)
@@ -137,6 +141,7 @@
     
 - 재귀
     - [x] 하노이 탑 [(1914)](https://www.acmicpc.net/problem/1914)
+    - [x] N과 M (1) [(15649)](https://www.acmicpc.net/problem/15649)
 ---
 
 ### 프로그래머스 
