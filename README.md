@@ -15,7 +15,7 @@
     - 레드 블랙 트리
     - AVL 트리
     - B +- 트리
-- SWAP (only bit, not use temp variable)
+- SWAP (not use temp variable)
 - Hash
 ---
  
@@ -140,17 +140,25 @@
     - [x] 카잉 달력 [(6064)](https://www.acmicpc.net/problem/6064)
     - [x] 수 이어 쓰기 1 [(1748)](https://www.acmicpc.net/problem/1748)
     - [x] 1, 2, 3, 더하기 [(9095)](https://www.acmicpc.net/problem/9095)
-    
+    - [x] N과 M
+        - [x] N과 M (1) [(15649)](https://www.acmicpc.net/problem/15649)
+        - [x] N과 M (2) [(15650)](https://www.acmicpc.net/problem/15650)
+        - [x] N과 M (3) [(15651)](https://www.acmicpc.net/problem/15651)
+        - [x] N과 M (4) [(15652)](https://www.acmicpc.net/problem/15652)
+        - [x] N과 M (5) [(15654)](https://www.acmicpc.net/problem/15654)
+        - [x] N과 M (6) [(15655)](https://www.acmicpc.net/problem/15655)
+        - [x] N과 M (7) [(15656)](https://www.acmicpc.net/problem/15656)
+        - [x] N과 M (8) [(15657)](https://www.acmicpc.net/problem/15657)
+    - [x] 순열
+        - [x] 다음 순열 [(10972)](https://www.acmicpc.net/problem/10972)
+        - [x] 이전 순열 [(10973)](https://www.acmicpc.net/problem/10973)
+        - [x] 모든 순열 [(10974)](https://www.acmicpc.net/problem/10974)
+        - [x] 차이를 최대로 [(10819)](https://www.acmicpc.net/problem/10819)
+        - [x] 로또 [(6603)](https://www.acmicpc.net/problem/6603)
+        
 - 재귀
     - [x] 하노이 탑 [(1914)](https://www.acmicpc.net/problem/1914)
-    - [x] N과 M (1) [(15649)](https://www.acmicpc.net/problem/15649)
-    - [x] N과 M (2) [(15650)](https://www.acmicpc.net/problem/15650)
-    - [x] N과 M (3) [(15651)](https://www.acmicpc.net/problem/15651)
-    - [x] N과 M (4) [(15652)](https://www.acmicpc.net/problem/15652)
-    - [x] N과 M (5) [(15654)](https://www.acmicpc.net/problem/15654)
-    - [x] N과 M (6) [(15655)](https://www.acmicpc.net/problem/15655)
-    - [x] N과 M (7) [(15656)](https://www.acmicpc.net/problem/15656)
-    - [x] N과 M (8) [(15657)](https://www.acmicpc.net/problem/15657)
+    
 ---
 
 ### 프로그래머스 

@@ -12,11 +12,26 @@ public class Swap {
         int a = 3;
         int b = 7;
 
+        xor(a, b);
+
+        math(a, b);
+    }
+
+    private static void xor(int a, int b) {
         a = a ^ b; // a = 011 ^ 111 = 100 = 4
 
         b = a ^ b; // b = 100 ^ 111 = 011 = 3
 
         a = a ^ b; // a = 100 ^ 011 = 111 = 7
+
+        System.out.println(a);
+        System.out.println(b);
+    }
+
+    private static void math(int a, int b) {
+        a = a + b;
+        b = a - b;
+        a = a - b;
 
         System.out.println(a);
         System.out.println(b);
