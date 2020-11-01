@@ -149,6 +149,10 @@
         - [x] N과 M (6) [(15655)](https://www.acmicpc.net/problem/15655)
         - [x] N과 M (7) [(15656)](https://www.acmicpc.net/problem/15656)
         - [x] N과 M (8) [(15657)](https://www.acmicpc.net/problem/15657)
+        - [x] N과 M (9) [(15663)](https://www.acmicpc.net/problem/15663)
+        - [x] N과 M (10) [(15664)](https://www.acmicpc.net/problem/15664)
+        - [x] N과 M (11) [(15665)](https://www.acmicpc.net/problem/15665)
+        - [x] N과 M (12) [(15666)](https://www.acmicpc.net/problem/15666)
     - [x] 순열
         - [x] 다음 순열 [(10972)](https://www.acmicpc.net/problem/10972)
         - [x] 이전 순열 [(10973)](https://www.acmicpc.net/problem/10973)
@@ -158,6 +162,12 @@
         
 - 재귀
     - [x] 하노이 탑 [(1914)](https://www.acmicpc.net/problem/1914)
+
+- 그래프
+    - [x] ABCDE [(13023)](https://www.acmicpc.net/problem/13023)
+    - [x] 연결 요소의 개수 [(11724)](https://www.acmicpc.net/problem/11724)
+    - [x] 섬의 개수 [(4963)](https://www.acmicpc.net/problem/4963)
+
     
 ---
 
