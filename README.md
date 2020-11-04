@@ -167,8 +167,8 @@
     - [x] ABCDE [(13023)](https://www.acmicpc.net/problem/13023)
     - [x] 연결 요소의 개수 [(11724)](https://www.acmicpc.net/problem/11724)
     - [x] 섬의 개수 [(4963)](https://www.acmicpc.net/problem/4963)
+    - [x] 미로 탈출 [(2179)](https://www.acmicpc.net/problem/2179)
 
-    
 ---
 
 ### 프로그래머스 
