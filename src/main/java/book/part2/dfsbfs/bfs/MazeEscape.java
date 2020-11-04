@@ -14,7 +14,7 @@ import java.util.Queue;
 101010
 111111
 000001
-111111
+000001
 111111
  */
 
@@ -31,8 +31,8 @@ public class MazeEscape {
             , new int[]{1, 0} // 남 2
             , new int[]{0, -1} // 서 3
     };
-    private static final int NOT_MONSTER = 1;
-    private static final int MONSTER = 0;
+    private static final int MONSTER = 1;
+    private static final int PATH = 0;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -66,11 +66,11 @@ public class MazeEscape {
                 int nextX = x + DIRECTION[i][0];
                 int nextY = y + DIRECTION[i][1];
 
-                if (isOver(x, y, graph)) {
+                if (isOver(nextX, nextY, graph)) {
                     continue;
                 }
 
-                if (isExistMonster(graph[nextX][nextY])) {
+                if (isMonster(graph[nextX][nextY])) {
                     continue;
                 }
 
@@ -84,11 +84,11 @@ public class MazeEscape {
     }
 
     private static boolean canMove(final int point) {
-        return point == NOT_MONSTER;
+        return point == MONSTER;
     }
 
-    private static boolean isExistMonster(final int point) {
-        return point == MONSTER;
+    private static boolean isMonster(final int point) {
+        return point == PATH;
     }
 
     private static boolean isOver(final int x, final int y, final int[][] graph) {

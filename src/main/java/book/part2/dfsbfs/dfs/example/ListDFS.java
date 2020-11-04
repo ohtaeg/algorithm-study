@@ -77,7 +77,7 @@ public class ListDFS implements DFS {
     }
 
     private boolean canVisit(final int node) {
-        return this.isVisit[node] == false;
+        return !this.isVisit[node];
     }
 
     private boolean isInfinite(final int nextNode) {
