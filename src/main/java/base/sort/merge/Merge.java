@@ -4,23 +4,23 @@ import java.util.Stack;
 
 public class Merge {
     public static void main(String[] args) {
-        int[] arr = new int[]{29, 14, 10, 37, 13, 10, 1}; // 10 13 14 29 37
-        Merge.sort(arr, 0, arr.length - 1);
+        int[] arr = new int[] {29, 14, 10, 37, 13, 10, 5, 1, 5};
+        Merge.divide(arr, 0, arr.length - 1);
         print(arr);
 
         System.out.println("== non recursive using stack ==");
 
-        int[] arr2 = new int[]{29, 14, 10, 37, 13, 10, 1};
+        int[] arr2 = new int[] {29, 14, 10, 37, 13, 10, 5, 1, 5};
         arr2 = Merge.sortUsingStack(arr2);
         print(arr2);
     }
 
     // recursive
-    private static void sort(final int[] arr, final int begin, final int end) {
+    private static void divide(final int[] arr, final int begin, final int end) {
         if (begin < end) {
             int half = (begin + end) / 2;
-            sort(arr, begin, half); // 전반부
-            sort(arr, half + 1, end); // 후반부
+            divide(arr, begin, half); // 전반부
+            divide(arr, half + 1, end); // 후반부
             merge(arr, begin, half, end); // merge
         }
     }
@@ -33,7 +33,7 @@ public class Merge {
         int right = half + 1;
 
         while (left <= half && right <= end) {
-            if (arr[left] < arr[right]) {
+            if (arr[left] <= arr[right]) {
                 temp[index++] = arr[left++];
             } else {
                 temp[index++] = arr[right++];
@@ -48,7 +48,7 @@ public class Merge {
             temp[index++] = arr[right++];
         }
 
-        for (int i=begin; i<index; i++) {
+        for (int i = begin; i < index; i++) {
             arr[i] = temp[i];
         }
     }
@@ -82,7 +82,6 @@ public class Merge {
             } else {
                 temp[index++] = rightPartition[right++];
             }
-
         }
 
         while (left < leftPartition.length) {
