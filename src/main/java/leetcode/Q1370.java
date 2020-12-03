@@ -11,23 +11,22 @@ public class Q1370 {
         Q1370 solution = new Q1370();
         System.out.println(solution.sortString("aaaabbbbcccc"));
         System.out.println(solution.sortString("rat"));
-
     }
 
     public String sortString(String inputValue) {
         TreeMap<String, Integer> map = init(inputValue);
-        boolean isReverse = false;
         StringBuilder result = new StringBuilder();
-        int remainCount = map.values()
-                             .stream()
-                             .reduce(0, Integer::sum);
+        boolean isReverse = false;
+        int remainCount = getRemainCount(map);
 
         while (remainCount != 0) {
             Iterator<String> keyIterator;
             if (isReverse) {
-                keyIterator = map.descendingKeySet().iterator();
+                keyIterator = map.descendingKeySet()
+                                 .iterator();
             } else {
-                keyIterator = map.keySet().iterator();
+                keyIterator = map.keySet()
+                                 .iterator();
             }
             while (keyIterator.hasNext()) {
                 String key = keyIterator.next();
@@ -41,6 +40,7 @@ public class Q1370 {
             }
             isReverse = !isReverse;
         }
+
         return result.toString();
     }
 
@@ -51,5 +51,11 @@ public class Q1370 {
             map.put(letter, map.getOrDefault(letter, 0) + 1);
         }
         return map;
+    }
+
+    private int getRemainCount(final TreeMap<String, Integer> map) {
+        return map.values()
+                  .stream()
+                  .reduce(0, Integer::sum);
     }
 }
