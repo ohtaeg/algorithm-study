@@ -237,4 +237,7 @@
 
 - Data Structures
     - Stack
-        - [x] Equal Stacks
+        - [x] EqualStacks
+    - Queue
+        - [x] QueueUsingTwoStacks
+        - [x] CastleOnTheGrid
