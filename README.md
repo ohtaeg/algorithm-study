@@ -1,6 +1,7 @@
 # 알고리즘 공부
 
 ## Base
+
 - 정렬
     - Bubble
     - Selection
@@ -19,13 +20,15 @@
 - Hash
 - Cache
     - [x] LRU 알고리즘
+
 ---
- 
+
 ### 이.취.코 책
+
 - Part 2
     - [x] 그리디
-        - [x] 거스름돈 
-        - [x] 큰 수의 법칙 
+        - [x] 거스름돈
+        - [x] 큰 수의 법칙
         - [x] 숫자 카드 게임
         - [x] 1이 될 때까지
     - [x] 구현
@@ -33,15 +36,15 @@
         - [x] 시각
         - [x] 왕실의 나이트
         - [x] 게임 개발
-    - [X] DFS/BFS 
+    - [X] DFS/BFS
         - [X] DFS 구현
-            - [x] 인접 행렬 (recursion, non recursion) 
-            - [x] 인접 리스트 (recursion, non recursion) 
+            - [x] 인접 행렬 (recursion, non recursion)
+            - [x] 인접 리스트 (recursion, non recursion)
         - [x] BFS 구현
             - [x] 인접 행렬
             - [x] 인접 리스트
         - [X] 음료수 얼려 먹기
-        - [X] 미로 탈출 
+        - [X] 미로 탈출
     - [x] 정렬
         - [x] 위에서 아래로
         - [x] 성적이 낮은 순서로 학생 출력하기
@@ -52,30 +55,31 @@
         - [x] 떡볶이 떡 만들기
 - Part 3
     - [x] 그리디
-        - [x] 모험가 길드 
-        - [x] 곱하기 혹은 더하기 
+        - [x] 모험가 길드
+        - [x] 곱하기 혹은 더하기
         - [x] 문자열 뒤집기 [(1439)](https://www.acmicpc.net/problem/1439)
         - [x] 만들 수 없는 금액
         - [x] 볼링공 고르기
         - [x] 무지의 먹방 라이브 [2019 카카오 신입 공채 4번](https://programmers.co.kr/learn/courses/30/lessons/42891)
     - [x] 구현
-        - [x] 럭키 스트레이트 [18406](https://www.acmicpc.net/problem/18406)    
-        - [x] 문자열 재정렬    
-        - [x] 문자열 압축 [2020 카카오 신입 공채 1번](https://programmers.co.kr/learn/courses/30/lessons/60057)    
-        - [x] 자물쇠와 열쇠 [2020 카카오 신입 공채 3번](https://programmers.co.kr/learn/courses/30/lessons/60059)    
+        - [x] 럭키 스트레이트 [18406](https://www.acmicpc.net/problem/18406)
+        - [x] 문자열 재정렬
+        - [x] 문자열 압축 [2020 카카오 신입 공채 1번](https://programmers.co.kr/learn/courses/30/lessons/60057)
+        - [x] 자물쇠와 열쇠 [2020 카카오 신입 공채 3번](https://programmers.co.kr/learn/courses/30/lessons/60059)
         - [x] 뱀 [삼성 SW 역량 테스트 기출문제 (3190)](https://www.acmicpc.net/problem/3190)
         - [ ] 기둥과 보 설치 (ing) [2020 카카오 신입 공채 5번](https://programmers.co.kr/learn/courses/30/lessons/60061)
         - [X] 치킨 배달 [삼성 SW 역량 테스트 기출문제 (15686)](https://www.acmicpc.net/problem/15686)
-        - [x] 외벽 점검 [2020 카카오 신입 공채 6번](https://programmers.co.kr/learn/courses/30/lessons/60062)   
+        - [x] 외벽 점검 [2020 카카오 신입 공채 6번](https://programmers.co.kr/learn/courses/30/lessons/60062)
     - [x] 정렬
         - [x] 국영수 [(10825)](https://www.acmicpc.net/problem/10825)
         - [x] 안테나 [(18310)](https://www.acmicpc.net/problem/18310)
         - [x] 실패율 [2019 카카오 신입 공채 2번](https://programmers.co.kr/learn/courses/30/lessons/42889)
         - [x] 카드 정렬하기 [(1715)](https://www.acmicpc.net/problem/1715)
-               
+
 ---
 
 ### 백준
+
 - Stack
     - [x] 에디터 [(1406)](https://www.acmicpc.net/problem/1406)
     - [x] 스택 수열 [(1874)](https://www.acmicpc.net/problem/1874)
@@ -108,7 +112,7 @@
     - [x] 네 수 [(10824)](https://www.acmicpc.net/problem/10824)
     - [x] ROT13 [(11655)](https://www.acmicpc.net/problem/11655)
     - [x] 문자열 정렬 [(11656)](https://www.acmicpc.net/problem/11656)
-    
+
 - 기초 수학
     - 진법
         - [x] 8진수 2진수 [(1212)](https://www.acmicpc.net/problem/1212)
@@ -161,7 +165,7 @@
         - [x] 모든 순열 [(10974)](https://www.acmicpc.net/problem/10974)
         - [x] 차이를 최대로 [(10819)](https://www.acmicpc.net/problem/10819)
         - [x] 로또 [(6603)](https://www.acmicpc.net/problem/6603)
-        
+
 - 재귀
     - [x] 하노이 탑 [(1914)](https://www.acmicpc.net/problem/1914)
 
@@ -173,7 +177,8 @@
 
 ---
 
-### 프로그래머스 
+### 프로그래머스
+
 - 레벨 1
     - [x] 완주하지 못한 선수
 - 레벨 2
@@ -199,5 +204,37 @@
     - [x] 2018 블라인드
         - [x] 파일명 정렬
         - [x] 캐시
-           
+
 ---
+
+### 코딜리티
+
+- lesson1
+    - [x] BinaryGap
+- lesson2
+    - [x] cyclicRotation
+    - [x] OddOccurrencesInArray
+- lesson3
+    - [x] FrogJump
+    - [x] PermMissingElem
+    - [x] TapeEquilibrium
+- lesson4
+    - [x] FrogRiverOne
+    - [x] MaxCounters
+    - [x] MissingInteger
+    - [x] PermCheck
+- lesson5
+    - [x] CountDiv
+    - [ ] GenomicRangeQuery
+- lesson6
+    - [x] Distinct
+    - [x] MaxProductOfThree
+    - [x] NumberOfDisIntersections
+
+---
+
+### 헤커랭크
+
+- Data Structures
+    - Stack
+        - [x] Equal Stacks
