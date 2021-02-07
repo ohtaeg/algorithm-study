@@ -233,7 +233,7 @@
 
 ---
 
-### 헤커랭크
+### 해커랭크
 
 - Data Structures
     - Stack
@@ -241,3 +241,5 @@
     - Queue
         - [x] QueueUsingTwoStacks
         - [x] CastleOnTheGrid
+    - Strings
+        - [x] Sherlock and the Valid String 
