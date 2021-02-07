@@ -242,4 +242,5 @@
         - [x] QueueUsingTwoStacks
         - [x] CastleOnTheGrid
     - Strings
-        - [x] Sherlock and the Valid String 
+        - [x] Sherlock and the Valid String
+        - [x] Java Anagrams
