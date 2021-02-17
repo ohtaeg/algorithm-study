@@ -181,6 +181,7 @@
 
 - 레벨 1
     - [x] 완주하지 못한 선수
+    - [x] 체육복
 - 레벨 2
     - 스택/큐
         - [x] 탑
@@ -192,6 +193,7 @@
     - 해시
         - [x] 전화번호 목록
         - [x] 위장
+    - [x] 조이스틱
 - 레벨 3
     - [x] 베스트 앨범
 - 카카오
@@ -244,3 +246,5 @@
     - Strings
         - [x] Sherlock and the Valid String
         - [x] Java Anagrams
+- Algorithms
+    - [x] Encryption
