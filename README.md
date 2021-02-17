@@ -248,3 +248,4 @@
         - [x] Java Anagrams
 - Algorithms
     - [x] Encryption
+    - [x] The Time in Words
